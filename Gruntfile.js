@@ -215,10 +215,14 @@
         options: {
           message: 'Content committed from Grunt gh-pages',
           dotfiles: true,
+          base: 'dist'
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: ['**/*']
+        src: [
+          '**/*',
+          '!node_modules'
+        ]
       },
 
       // FILE MANAGEMENT
