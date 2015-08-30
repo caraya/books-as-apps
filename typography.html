@@ -40,6 +40,134 @@
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css inline -->
   <style type="text/css">
+.right-column:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.main-content-simple {
+  width: 61.25%;
+  float: left;
+  margin-left: 0.625%;
+  margin-right: 0.625%;
+  height: 100%;
+}
+.main-content-simple:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.full-bleed {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-right: -30%;
+  margin-left: -30%;
+  padding-right: 30%;
+  padding-left: 30%;
+}
+.full-bleed:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.full-bleed p {
+  margin-top: -.5em;
+}
+
+@media (min-width: 0) {
+  body::before {
+    content: '{ "current" : "small", "all" : [small], "position" : 0 }';
+    display: none;
+  }
+}
+
+body {
+  font-size: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a[href^="http"] {
+  text-decoration: underline;
+}
+
+html {
+  color: #554c4d;
+  font-family: 'Stone-Humanist';
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "kern=1";
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+}
+
+h1{
+  color: 555;
+  font-family: 'Roboto Slab', sans-serif;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  line-height: 1.25;
+  margin-top: 0.9375em;
+  margin-bottom: 0.3125em;
+}
+
+style {
+  font-family: sourcecodepro-medium-webfont, monospace;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  white-space: pre;
+  clear: both;
+  margin-bottom: .5em;
+}
+
+
+
+
+
+@media (min-width: 220em) {
+  h1 {
+    font-size: 2.5em;
+    letter-spacing: normal;
+    line-height: 1.125;
+    margin-top: 0.73333334em;
+    margin-bottom: 0.24444445em;
+    max-width: 14.4em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 282.5em) {
+  h1 {
+    font-size: 3em;
+    letter-spacing: normal;
+    line-height: 1.05;
+    margin-top: 0.6875em;
+    margin-bottom: 0.22916667em;
+    max-width: 12.66667em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (min-width: 220em) {
 
 ol li {
@@ -49,147 +177,6 @@ ol li {
 .font-glossary dd:last-of-type {
 
 .col2 {
-
-
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-  display: block;
-}
-
-audio,
-canvas,
-video {
-
-[hidden], template {
-
-html,
-button,
-input,
-select,
-textarea {
-
-a {
-a:hover, a:active {
-
-h2 {
-
-h4 {
-
-h6 {
-
-b,
-strong {
-
-mark {
-kbd,
-pre,
-samp {
-
-q { q:after {
-
-sub,
-sup {
-
-sub {
-
-svg:not(:root) {
-
-button, input {
-select {
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-input[disabled] { input::-moz-focus-inner {
-
-table {
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { input[type="radio"] {
-
-@media (min-width: 220em) {
-
-ol li {
-.toc ul li {
-
-.font-glossary dt {
-.font-glossary dd:last-of-type {
-
-.col2 {
-
-
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-  display: block;
-}
-
-audio,
-canvas,
-video {
-
-[hidden], template {
-
-html,
-button,
-input,
-select,
-textarea {
-
-a {
-a:hover, a:active {
-
-h2 {
-
-h4 {
-
-h6 {
-
-b,
-strong {
-
-mark {
-kbd,
-pre,
-samp {
-
-q { q:after {
-
-sub,
-sup {
-
-sub {
-
-svg:not(:root) {
-
-button, input {
-select {
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-input[disabled] { input::-moz-focus-inner {
-
-table {
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
 </style>
 <script>
 (function(u){function loadCSS(e,t,n){"use strict";function r(){for(var t,i=0;i<d.length;i++)d[i].href&&d[i].href.indexOf(e)>-1&&(t=!0);t?o.media=n||"all":setTimeout(r)}var o=window.document.createElement("link"),i=t||window.document.getElementsByTagName("script")[0],d=window.document.styleSheets;return o.rel="stylesheet",o.href=e,o.media="only x",i.parentNode.insertBefore(o,i),r(),o}for(var i in u){loadCSS(u[i]);}}(['./css/critical.css','css/main.css','css/styles/github.css']));
