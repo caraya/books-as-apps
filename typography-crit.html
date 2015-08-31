@@ -6,43 +6,236 @@
   <title>Typography Playground</title>
   <meta name="description" content="Explorations and exercises in web typography and related css specifications">
 
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0">
   <!-- iOS Web App indicators -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!-- iOS ICONS AND START SCREENS -->
-  <link rel="apple-touch-icon" href="/images/misc/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/misc/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/misc/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" href="/images/misc/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/misc/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/misc/apple-touch-icon-114x114.png">
 
   <!-- iPhone/iPod Touch Portrait – 320 x 460 (standard resolution) -->
   <!-- These are not all available resolutions, do your homework -->
-  <link rel="apple-touch-startup-image" href="/images/misc/splash-screen-320x460.png" media="screen and (max-device-width: 320px)" />
+  <link rel="apple-touch-startup-image" href="/images/misc/splash-screen-320x460.png" media="screen and (max-device-width: 320px)">
 
   <!-- For iPad Landscape 1024x748 -->
-  <link rel="apple-touch-startup-image" sizes="1024x748" href="/images/misc/splash-screen-1024x748.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+  <link rel="apple-touch-startup-image" sizes="1024x748" href="/images/misc/splash-screen-1024x748.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
 
   <!-- For iPad Portrait 768x1004 (high-resolution) -->
-  <link rel="apple-touch-startup-image" sizes="1536x2008" href="/images/misc/splash-screen-1536x2008.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)" />
+  <link rel="apple-touch-startup-image" sizes="1536x2008" href="/images/misc/splash-screen-1536x2008.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)">
 
   <!-- Windows 8+ tile stuff - Assumes all content is uploaded to server -->
-  <meta name="application-name" content="My Awesome Site" />
-  <meta name="msapplication-TileColor" content="#e809e8" />
-  <meta name="msapplication-square70x70logo" content="tiny.png" />
-  <meta name="msapplication-square150x150logo" content="square.png" />
-  <meta name="msapplication-wide310x150logo" content="wide.png" />
-  <meta name="msapplication-square310x310logo" content="large.png" />
+  <meta name="application-name" content="My Awesome Site">
+  <meta name="msapplication-TileColor" content="#e809e8">
+  <meta name="msapplication-square70x70logo" content="tiny.png">
+  <meta name="msapplication-square150x150logo" content="square.png">
+  <meta name="msapplication-wide310x150logo" content="wide.png">
+  <meta name="msapplication-square310x310logo" content="large.png">
 
   <link rel="manifest" href="manifest.json">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
   <!-- build:css inline -->
-  <link rel="stylesheet" href="./css/critical.css">
+  <style type="text/css">
+.right-column:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.main-content-simple {
+  width: 61.25%;
+  float: left;
+  margin-left: 0.625%;
+  margin-right: 0.625%;
+  height: 100%;
+}
+.main-content-simple:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.full-bleed {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-right: -30%;
+  margin-left: -30%;
+  padding-right: 30%;
+  padding-left: 30%;
+}
+.full-bleed:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.full-bleed p {
+  margin-top: -.5em;
+}
+
+@media (min-width: 0) {
+  body::before {
+    content: '{ "current" : "small", "all" : [small], "position" : 0 }';
+    display: none;
+  }
+}
+
+body {
+  font-size: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a[href^="http"] {
+  text-decoration: underline;
+}
+
+blockquote {
+  border-left: 5px solid #f44336;
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+  margin-top: 1.5em;
+  padding-left: 1em;
+}
+
+html {
+  color: #554c4d;
+  font-family: 'Stone-Humanist';
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "kern=1";
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+}
+
+h1,
+h2{
+  color: 555;
+  font-family: 'Roboto Slab', sans-serif;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  line-height: 1.25;
+  margin-top: 0.9375em;
+  margin-bottom: 0.3125em;
+}
+
+div.video {
+  margin: 1em auto;
+  max-width: 500px;
+  max-width: min-content;
+}
+div.video iframe {
+  clear: both;
+  max-width: inherit;
+}
+div.video p {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: -.125em;
+}
+
+style {
+  font-family: sourcecodepro-medium-webfont, monospace;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  white-space: pre;
+  clear: both;
+  margin-bottom: .5em;
+}
+
+
+
+
+
+@media (min-width: 220em) {
+  h1 {
+    font-size: 2.5em;
+    letter-spacing: normal;
+    line-height: 1.125;
+    margin-top: 0.73333334em;
+    margin-bottom: 0.24444445em;
+    max-width: 14.4em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 282.5em) {
+  h1 {
+    font-size: 3em;
+    letter-spacing: normal;
+    line-height: 1.05;
+    margin-top: 0.6875em;
+    margin-bottom: 0.22916667em;
+    max-width: 12.66667em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 220em) {
+  h2 {
+    font-size: 2em;
+    line-height: 1.25;
+    margin-top: 1.03125em;
+    margin-bottom: 0.34375em;
+    max-width: 18em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 282.5em) {
+  h2 {
+    font-size: 2.25em;
+    line-height: 1.25;
+    margin-top: 1.03125em;
+    margin-bottom: 0.34375em;
+    max-width: 16.88889em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 220em) {
+
+ol li {
+.toc ul li {
+
+.font-glossary dt {
+.font-glossary dd:last-of-type {
+
+.col2 {
+</style>
+<script>
+(function(u){function loadCSS(e,t,n){"use strict";function r(){for(var t,i=0;i<d.length;i++)d[i].href&&d[i].href.indexOf(e)>-1&&(t=!0);t?o.media=n||"all":setTimeout(r)}var o=window.document.createElement("link"),i=t||window.document.getElementsByTagName("script")[0],d=window.document.styleSheets;return o.rel="stylesheet",o.href=e,o.media="only x",i.parentNode.insertBefore(o,i),r(),o}for(var i in u){loadCSS(u[i]);}}(['./css/critical.css','css/main.css','css/styles/github.css']));
+</script>
+<noscript>
+<link rel="stylesheet" href="./css/critical.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/styles/github.css">
+</noscript>
   <!-- /build -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/styles/github.css">
+  
+  
 
   <script src="lib/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -55,20 +248,20 @@
 
 
   <div class="wrap">
-     <div class='full-bleed'>
-       <img class='full-bleed-image' src="images/typography.jpg" alt="image showing multiple typefaces being written in several directions" class='header-image'>
+     <div class="full-bleed">
+       <img class="full-bleed-image" src="images/typography.jpg" alt="image showing multiple typefaces being written in several directions">
        <p>Image licensed under CC Attribution by <a href="https://www.flickr.com/photos/tarale/2897185492/">Taryn</a></p>
      </div>
 
-     <div class='left-column'>
+     <div class="left-column">
      <p></p>
 
      </div>
      <div class="main-content-simple">
 
-      <h1 id='playground'>Typography Playground</h1>
+      <h1 id="playground">Typography Playground</h1>
 
-      <p>Over the past few months I've rekindled my interest in typography; how it works in print and also how it works online. I'm also working through two typography books that are very relevant to both typographic work and overall front end design and development. <a href="http://oreil.ly/1QuoKut">Responsive Typography</a> by Jason Pamental, <a href="http://abookapart.com/products/on-web-typography">On web typography</a> by Jason Santa Maria and <a href='https://prowebtype.com/'>Professional Web Typography</a> by Donny Truong.</p>
+      <p>Over the past few months I've rekindled my interest in typography; how it works in print and also how it works online. I'm also working through two typography books that are very relevant to both typographic work and overall front end design and development. <a href="http://oreil.ly/1QuoKut">Responsive Typography</a> by Jason Pamental, <a href="http://abookapart.com/products/on-web-typography">On web typography</a> by Jason Santa Maria and <a href="https://prowebtype.com/">Professional Web Typography</a> by Donny Truong.</p>
 
       <p>But it wasn't until fluent that I got a better idea of why typography is important.I got the chance to talk with both Eric Meyer, one of my early web design influences, and Jason Pamental, the author of Responsive Typography and a very good presenter.</p>
 
@@ -80,7 +273,7 @@
 
       <h2>Why worry about typography on the web?</h2>
 
-      <div class='video'>
+      <div class="video">
         <iframe width="100%" height="315" src="https://www.youtube.com/embed/0OF-jU97HzQ" frameborder="0" allowfullscreen></iframe>
 
         <p>Universal Typography -- Tim Brown</p>
@@ -95,7 +288,7 @@
       <p>I started taking a serious look at typography about 3 years ago. I'm not an expect and I'm most definitely not a professional but I'm learning and the more I learn the more I think we can use the full range of web technologies to enhance the text and the reading experience for our users.</p>
 
       <section>
-        <h2 id='definitions'>Definitions and Terminology</h2>
+        <h2 id="definitions">Definitions and Terminology</h2>
 
         <p>Before we dive into Type selection we'll do a few things: clear terminology and setup some common definitions to work from. The first one is the diference between typeface and font and then we'll dive into a short (and incomplete) glossary of typographical terms</p>
 
@@ -109,18 +302,18 @@
 
         <p>The best analogy I've heard about is that the relationship between typeface and font is analogous to the relationship between music and mp3. One is the content and the other is the media content is delivered in.</p>
 
-        <p>For more information, check out <a href='http://fontfeed.com/archives/font-or-typeface/'>font or typeface</a> and <a href='http://fontfeed.com/archives/styles-weights-widths-it%E2%80%99s-all-in-the-type-family/'>Styles, Weights, Widths — It’s All in the (Type) Family</a> both at Fontfeed.com.</p>
+        <p>For more information, check out <a href="http://fontfeed.com/archives/font-or-typeface/">font or typeface</a> and <a href="http://fontfeed.com/archives/styles-weights-widths-it%E2%80%99s-all-in-the-type-family/">Styles, Weights, Widths — It’s All in the (Type) Family</a> both at Fontfeed.com.</p>
 
-        <h3 id='glossary'>Font Glossary</h3>
+        <h3 id="glossary">Font Glossary</h3>
 
         <figure>
           <img src="images/font-terms.png" alt="Visual representation of type related terms">
           <figcaption>Visual representation of type related terms</figcaption>
         </figure>
 
-        <p>definitions taken, in part, from Fontshop's <a href='https://www.fontshop.com/glossary'>Typography Glossary</a> and Typography Deconstructed's <a href='http://www.typographydeconstructed.com/category/type-glossary/'>Type Glossary</a></p>
+        <p>definitions taken, in part, from Fontshop's <a href="https://www.fontshop.com/glossary">Typography Glossary</a> and Typography Deconstructed's <a href="http://www.typographydeconstructed.com/category/type-glossary/">Type Glossary</a></p>
 
-        <dl class='font-glossary'>
+        <dl class="font-glossary">
 
           <dt>Uppercase</dt>
           <dd>The capitals in a typeface. The name refers to the days of metal type, as the capitals were kept in the upper part of the type case.</dd>
@@ -209,7 +402,7 @@
       </section>
 
       <section>
-        <h2 id='font-selection'>Font Selection</h2>
+        <h2 id="font-selection">Font Selection</h2>
 
         <p>All type shares characteristics. We'll look at some of them before we dive into selecting font stacks and other type related element. As we move along we'll discover that these elements are all interrelated and that changing one of these elements will force changes in others too.</p>
 
@@ -267,13 +460,13 @@
 
         <p>Until now we've looked at the technical aspects of type where the typeface will be used is also important. Context has more to do with how the type feels. If you're developing responsive sites, does the type feel too tight or constrained in larger screens? Does it feel too loose in smaller displays? The goal is to find typeface that works consistently accross your target devices.</p>
 
-        <h3 id='font-stacks'>Font stacks</h3>
+        <h3 id="font-stacks">Font stacks</h3>
 
         <p>Unless you're using one of the universal fonts, those available everywhere, you will most likely have to plan for what happens if your browser cannot load the font because your internet connection just died or you got caught using a font that you were not licensed to use. That's where you use the font stack.</p>
 
         <p>At its simplest, the stack is the list of fonts that you want to use in your page going from left to right. For example in the following font stack:</p>
 
-        <pre><code class='css'>html {
+        <pre><code class="css">html {
   font-family: 'Museo Sans', Verdana, sans-serif;
 }</code></pre>
 
@@ -281,10 +474,10 @@
 
         <p>Why is this important, you may be asking. Because not all fonts are the same. Even fonts that look very similar may be different enough to cause problems with your layout. Let's look at the same Lorem Ipsum text in two different fonts.
 
-          <p>The first example will use Stone Humanist, the font I chose for the body text in this document.</p>
+          </p><p>The first example will use Stone Humanist, the font I chose for the body text in this document.</p>
 
 <div class="css-example">
-            <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+            <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#example1 {
   border: 1px solid #cc092f;
@@ -295,7 +488,7 @@ div#example1 {
 }
           </style>
 
-          <div id='example1'>
+          <div id="example1">
             <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
             <p>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
           </div>
@@ -305,7 +498,7 @@ div#example1 {
           <p>The second example uses <a href="https://www.wikiwand.com/en/Verdana">Verdana</a>, a font created for and released by Microsoft in 1996.</p>
 
 <div class="css-example">
-            <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+            <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#example2 {
   border: 1px solid #cc092f;
@@ -315,7 +508,7 @@ div#example2 {
   padding: 1em;
 }
           </style>
-          <div id='example2'>
+          <div id="example2">
             <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
             <p>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
           </div>
@@ -360,11 +553,11 @@ div#example2 {
 
           <p>Using a generic family as the last item in your font stack is essential. The system is guaranteed to be available and you can style your content with this in mind. It also makes your CSS less succeptuble to slow connections or network failures.</p>
 
-          <h3 id='considerations'>Additional Considerations</h3>
+          <h3 id="considerations">Additional Considerations</h3>
 
           <p>There are a couple more elements to consider when selecting a font. They may not seem as important but when put together with evcerything else we'll discuss in this page, it's a lot more important than we give it credit for.</p>
 
-          <h4 id='size'>Font size</h4>
+          <h4 id="size">Font size</h4>
 
           <p>Even when working with Desktop Operating Systems alone a font may look very different. It doesn't necessarily have anything to do with the design and all with how the operating system renders fonts and it may not even happen but this is something to consider when testing.</p>
 
@@ -382,17 +575,17 @@ div#example2 {
             <figcaption>Content displayed in Microsoft Edge running in a Windows 10 virtual machine</figcaption>
           </figure>
 
-          <h4 id='line-height'>Line height</h4>
+          <h4 id="line-height">Line height</h4>
 
           <p>In CSS line-height control the vertical space between lines. It can help readability and make it easier for people with dissabilities to engage with your content. </p>
 
-          <pre><code class='css'>p {
+          <pre><code class="css">p {
   font: 1em/1.5 arial, helvetica, sans-serif;
 }</code></pre>
 
           <p>Which is equivalent to this, much more verbose, syntax:</p>
 
-          <pre><code class='css'>p {
+          <pre><code class="css">p {
   font-family: arial, helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -403,7 +596,7 @@ div#example2 {
           <p>So why do we care about line height. In the example below change the line height attribute, play with values from 1 to 2 or even 3 and see the difference. Which one is more comfortable to read?</p>
 
 <div class="css-example">
-            <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+            <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#example3 {
   border: 1px solid #cc092f;
@@ -414,14 +607,14 @@ div#example3 {
 }
           </style>
 
-          <div id='example3'>
+          <div id="example3">
             <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
             <p>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
           </div>
 </div>
           <p>Example demonstrating what happens when you change line-height</p>
 
-          <h3 id='line-width'>Line width</h3>
+          <h3 id="line-width">Line width</h3>
 
           <blockquote>
             <p>Anything from 45 to 75 characters is widely regarded as a satisfactory length of line for a single-column page set in a serifed text face in a text size. The 66-character line (counting both letters and spaces) is widely regarded as ideal. For multiple-column work, a better average is 40 to 50 characters.</p>
@@ -431,7 +624,7 @@ div#example3 {
           <p>Until I started working with web type I had never considered line length as an element when building content. But it makes sense, the longer a line of text is the more we need to be mindful when working with it. In the example below, the text at the same width looks significantly different when we adjust the line height.</p>
 
 <div class="css-example">
-            <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+            <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#widthExample1 {
   border: 1px solid #cc092f;
@@ -462,15 +655,15 @@ div#widthExample1 p.p4 {
 
 </style>
 
-          <div id='widthExample1'>
-            <p class='p1'>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
-            <p class='p2'>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
-            <p class='p3'>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
-            <p class='p4'>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>          </div>
+          <div id="widthExample1">
+            <p class="p1">Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
+            <p class="p2">Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
+            <p class="p3">Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
+            <p class="p4">Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>          </div>
 </div>
           <p>What happens when you change line-height for text of a given width</p>
 
-          <h3 id='so-what'>So what should the stack look like?</h3>
+          <h3 id="so-what">So what should the stack look like?</h3>
 
           <p>So, after all these conversations about different types of typefaces, fonts, availability and when to use and not to use them, what should a good font stack look like?</p>
 
@@ -491,11 +684,11 @@ div#widthExample1 p.p4 {
       </section>
 
       <section>
-        <h2 id='loading'>Loading Fonts</h2>
+        <h2 id="loading">Loading Fonts</h2>
 
-        <p>Now that we have a better idea of what fonts we want to use and the font stack we'll see how to load them into the page. We'll explore 3 ways: local loading using the <em>@font-face syntax</em>, loading fonts using the <a href="https://developers.google.com/fonts/docs/getting_started">Google font API</a>, using Google's <a href="https://github.com/typekit/webfontloader/blob/master/README.md">Web Font Loader</a> and a new tool called <a href='https://github.com/bramstein/fontfaceobserver/blob/master/README.md'>Font Face Observer</a></p>
+        <p>Now that we have a better idea of what fonts we want to use and the font stack we'll see how to load them into the page. We'll explore 3 ways: local loading using the <em>@font-face syntax</em>, loading fonts using the <a href="https://developers.google.com/fonts/docs/getting_started">Google font API</a>, using Google's <a href="https://github.com/typekit/webfontloader/blob/master/README.md">Web Font Loader</a> and a new tool called <a href="https://github.com/bramstein/fontfaceobserver/blob/master/README.md">Font Face Observer</a></p>
 
-        <h3 id='at-font-face'>@font-face </h3>
+        <h3 id="at-font-face">@font-face </h3>
 
         <p>We have been able to use fonts on our web content since the days of IE 3 (3.5 for Macintosh if I remember correctly) but we've always had to contend with font creators and foundries fear of piracy. It's only recently that they have relented and allowed their fonts to be used. The basic syntax, covering all modern browsers, looks like this:</p>
 
@@ -552,7 +745,7 @@ em strong {
 
         <p>The flipside to this issue of size is that embedding the fonts means they are always available to desktop and mobile browsers readers that support embedding (and it should be all of them.) Choosing what browsers and what versions to support is a different story.</p>
 
-        <h3 id='google-font-api'>Google Fonts API</h3>
+        <h3 id="google-font-api">Google Fonts API</h3>
 
         <p>Google has two ways of using web fonts, the first one is directly through their API. Using Google's font API is a two step process. First add the font to your html head element with the following syntax (using Tangerine as an example):</p>
 
@@ -581,7 +774,7 @@ em strong {
 
         <p>The obvoius disadvantage is that this only works online. That's why a fallback option or options is even more important when working with the API. If we're offline or connectivity is limited we want a good fallback font.</p>
 
-        <h3 id='googe-web-font-loader'>Google web font loader</h3>
+        <h3 id="googe-web-font-loader">Google web font loader</h3>
 
         <p>One of the things neither the font API or directly downloading the content doesn't address is the "flash of unstyled text." According to the <a href="http://help.typekit.com/customer/portal/articles/6852-Controlling-the-Flash-of-Unstyled-Text-or-FOUT-using-Font-Events">Typekit Help Center</a>:</p>
 
@@ -616,7 +809,7 @@ em strong {
 
      <p>Or using asynchronous loading:</p>
 
-     <pre><code class='javascript'>&lt;script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js">&lt;/script>
+     <pre><code class="javascript">&lt;script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js">&lt;/script>
 &lt;script>
   WebFontConfig = {
     google: { families: [ 'Lora:400,700,400italic,700italic:latin' ] }
@@ -688,13 +881,13 @@ em strong {
   &lt;link href='http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,300italic' rel='stylesheet' type='text/css'>
 &lt;/noscript></code></pre>
 
-     <h3 id='font-face-observer'>Font Face Observer</h3>
+     <h3 id="font-face-observer">Font Face Observer</h3>
 
      <p>As good as the Webfont Loader is good it causes some Flash of Invisible text when the fonts load and the browser switches from the system fonts to the webfonts it just loaded. The script for the Webfont Loader must be placed in the <code>head</code> of the document with all the performance pitfalls inherent to it.</p>
 
-     <p>Font Face Observer, a fairly new delivery mechanism developed by Adobe Typekit engineer Bram Stein, uses JavaScript’s scroll events to load and monitor web fonts. Unlike the Web Font Loader, the Font Face Observer can be referenced at the end of document to avoid the extra overhead. Scott Jehl's approach, as documented in the <a href='http://www.filamentgroup.com/lab/font-events.html'>Filament's Group blog</a> and is the system we'll discuss below. The full page is shown below and will be explained as we go along.</p>
+     <p>Font Face Observer, a fairly new delivery mechanism developed by Adobe Typekit engineer Bram Stein, uses JavaScript’s scroll events to load and monitor web fonts. Unlike the Web Font Loader, the Font Face Observer can be referenced at the end of document to avoid the extra overhead. Scott Jehl's approach, as documented in the <a href="http://www.filamentgroup.com/lab/font-events.html">Filament's Group blog</a> and is the system we'll discuss below. The full page is shown below and will be explained as we go along.</p>
 
-     <pre><code class='html'>&lt;!DOCTYPE html>
+     <pre><code class="html">&lt;!DOCTYPE html>
 &lt;!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
 &lt;html lang="en" class="fonts-loaded">
 &lt;!--#else -->
@@ -754,16 +947,16 @@ em strong {
 &lt;/body>
 &lt;/html></code></pre>
 
-    <p>The first thing we do is to use Server Side Includes, a way to have the server generate pieces of content for the web, to add the <code>fonts-loaded</code> CSS class if the corresponding cookie has already been set. In this way the loader will only use the fonts if they've been already been loaded, otherwise it will not add the class and the process will continue.<p>
+    <p>The first thing we do is to use Server Side Includes, a way to have the server generate pieces of content for the web, to add the <code>fonts-loaded</code> CSS class if the corresponding cookie has already been set. In this way the loader will only use the fonts if they've been already been loaded, otherwise it will not add the class and the process will continue.</p><p>
 
-    <pre><code class='html'>&lt;!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
+    <pre><code class="html">&lt;!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
 &lt;html lang="en" class="fonts-loaded">
 &lt;!--#else -->
 &lt;html lang="en"></code></pre>
 
-   <p>While still in the head of the document we load our fonts using the @font-face syntax we discussed earlier and associate the fonts with the css needed. Note that we have two classes for the body, a plain one where only system fonts are used and a version with the fonts-loaded class where the webfont is the primary and the system font is our backup. </p>
+   </p><p>While still in the head of the document we load our fonts using the @font-face syntax we discussed earlier and associate the fonts with the css needed. Note that we have two classes for the body, a plain one where only system fonts are used and a version with the fonts-loaded class where the webfont is the primary and the system font is our backup. </p>
 
-   <pre><code class='html'>  &lt;style>
+   <pre><code class="html">  &lt;style>
   @font-face {
     font-family: 'Lora';
       src: url('lora-regular.woff2') format('woff2'),
@@ -793,7 +986,7 @@ em strong {
 
    <p>We next define variables for each of the fonts we will use in our document. This will be used in the last part of the script, discussed below.</p>
 
-    <pre><code class='html'>&lt;script src="fontfaceobserver.js">&lt;/script>
+    <pre><code class="html">&lt;script src="fontfaceobserver.js">&lt;/script>
 &lt;script>
 (function( w ){
   if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
@@ -808,9 +1001,9 @@ em strong {
   });
     </code></pre>
 
-    <p>The last part of the script uses a JavaScript <a href='http://www.html5rocks.com/en/tutorials/es6/promises/'>promise</a>. Once both promises fulfill it will add the <code>fonts-loaded</code> class to the document (root) element, in this case, html. </p>
+    <p>The last part of the script uses a JavaScript <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>. Once both promises fulfill it will add the <code>fonts-loaded</code> class to the document (root) element, in this case, html. </p>
 
-    <pre><code class='html'>w.Promise
+    <pre><code class="html">w.Promise
   .all([font1.check(), font2.check()])
   .then(function(){
       w.document.documentElement.className += " fonts-loaded";
@@ -823,20 +1016,20 @@ em strong {
     <h3>Links and Resources</h3>
 
     <ul>
-      <li><a href='https://prowebtype.com/delivering-web-fonts/#observer'>Delivering Web Fonts</a> chapter from Professional Web Typography</li>
-      <li><a href='http://www.filamentgroup.com/lab/font-events.html'>Font Loading Revisited with Font Events</a></li>
-      <li>SSI instructions for <a href='http://httpd.apache.org/docs/current/howto/ssi.html'>Apache HTTPD</a></li>
-      <li>SSI instructions for <a href='http://nginx.org/en/docs/http/ngx_http_ssi_module.html'>Nginx</a></li>
+      <li><a href="https://prowebtype.com/delivering-web-fonts/#observer">Delivering Web Fonts</a> chapter from Professional Web Typography</li>
+      <li><a href="http://www.filamentgroup.com/lab/font-events.html">Font Loading Revisited with Font Events</a></li>
+      <li>SSI instructions for <a href="http://httpd.apache.org/docs/current/howto/ssi.html">Apache HTTPD</a></li>
+      <li>SSI instructions for <a href="http://nginx.org/en/docs/http/ngx_http_ssi_module.html">Nginx</a></li>
     </ul>
      </section>
 
      <section>
-        <h2 id='paragraph-styling'>Paragraph styling</h2>
+        <h2 id="paragraph-styling">Paragraph styling</h2>
 
         <p>Most the time we spend engaged with text is with paragraphs and that's where I put a lot of my research time when working on a new project. You may be asking why put so much work on how the paragraphs look... As you will see in the example below there are many elements that are involved in controlling paragraph appearance.</p>
 
 <div class="css-example">
-    <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+    <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#example4 {
   border: 1px solid #cc092f;
@@ -860,7 +1053,7 @@ div#example4 p {
 }
           </style>
 
-          <div id='example4'>
+          <div id="example4">
             <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
             <p>Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
             <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
@@ -907,7 +1100,7 @@ div#example4 p {
 
           <p>But whether you use them or not, you get the idea of how much work goes into making paragraphs read well.</p>
 
-          <h3 id='dropcaps'>Drop caps</h3>
+          <h3 id="dropcaps">Drop caps</h3>
 
           <p>Most (if not all) of us have seen the big initial capital letter on the first paragraph of a chapter. We can do th is with CSS. One version of the effect looks like the code below using first--of-type and first-letter to identify the first letter of the first paragraph and the styles to apply to t his pseudo element</p>
 
@@ -920,7 +1113,7 @@ div#example4 p {
           </code></pre>
 
     <div class="css-example">
-      <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+      <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 #dropcap-example {
   border: 1px solid #cc092f;
@@ -935,7 +1128,7 @@ div#example4 p {
   padding-right: 0.15em;
 }
       </style>
-      <div id='dropcap-example'>
+      <div id="dropcap-example">
         <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing. Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
         <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
         <p>Ad short Wibs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
@@ -956,7 +1149,7 @@ div#example4 p {
           </code></pre>
 
     <div class="css-example">
-      <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+      <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 #dropcap-example2 {
   border: 1px solid #cc092f;
@@ -971,7 +1164,7 @@ div#example4 p {
   padding-right: 0.15em;
 }
       </style>
-      <div id='dropcap-example2'>
+      <div id="dropcap-example2">
         <h1>This is the bacon</h1>
         <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing. Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
         <p>Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing.</p>
@@ -988,41 +1181,41 @@ div#example4 p {
 
         <p>Let's look at what the possibilities are. </p>
 
-        <h3 id='same-or-different'>Same or different fontface?</h3>
+        <h3 id="same-or-different">Same or different fontface?</h3>
 
         <p>One of the questions that always baffles me is whether to use the same font for headings as I use for the body text. The first example uses the same font (Raleway) for both headings and body text. It looks ok but I'm still not sold out on the idea.</p>
 
 
-<p data-height="355" data-theme-id="2039" data-slug-hash="gpxOwe" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/gpxOwe/'>Headings using body type</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="355" data-theme-id="2039" data-slug-hash="gpxOwe" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/gpxOwe/">Headings using body type</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>The second example uses a Serif font, Roboto Slab, in the headings with Stone Humanist as the body font. I like the contrast I have to keep reminding myself that the contrast must be present but not be jarring to the reader.</p>
 
-<p data-height="338" data-theme-id="2039" data-slug-hash="dozyOW" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/dozyOW/'>Headings in Serif Font</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="338" data-theme-id="2039" data-slug-hash="dozyOW" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/dozyOW/">Headings in Serif Font</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
 <p>The last option is to use a typeface from the web safe palette. One of my favorite typefaces is Verdana so we'll try that for headings and see how that looks on our headins with the font selected for the body. And here it is:</p>
 
-<p data-height="337" data-theme-id="2039" data-slug-hash="GJvRNQ" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/GJvRNQ/'>Using a system serif font for headings</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="337" data-theme-id="2039" data-slug-hash="GJvRNQ" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/GJvRNQ/">Using a system serif font for headings</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
   <p>So with these three options which one should I pick? Three typefaces may not be enough but out of the three I'd pick Roboto Slab. We should certainly test additional fonts either with a system like the one I just did or with <a href="http://typecast.com/">Typecast</a> but I was narrowing the choice to these three so doing it by hand was less of a hassle than setting up Typecast. In a larger project I would set up Typecast earlier and do all the testing there. </p>
 
-<h3 id='playing-with-heading-type'>Playing with heading type</h3>
+<h3 id="playing-with-heading-type">Playing with heading type</h3>
 
   <p>Now that we've selected the font we can look at some effects that will make the headings stand out further. We can play with changing the capitalization of the heading, make them all upper or lower case and maybe even change letter and word spacing.</p>
 
   <p>The example below uses different values for the text-transform property to change the way the headings look.</p>
 
-<p data-height="266" data-theme-id="2039" data-slug-hash="WvENoL" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/WvENoL/'>Different text effects applied to headings</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="266" data-theme-id="2039" data-slug-hash="WvENoL" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/WvENoL/">Different text effects applied to headings</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
       </section>
 
      <section>
-             <h2 id='color'>Color</h2>
+             <h2 id="color">Color</h2>
 
       <p>Another aspect to consider is the color for your typefaces. This is a very design-dependent step. Were you given a color palette as part of your design brief? Then use those. But if you're planning your own project then you can use the tools below.</p>
 
@@ -1035,7 +1228,7 @@ div#example4 p {
        <p>It may not have al the colors I need and I'm in no way required to use all the colors in the palette but I will set them up anyways so we can see what it looks like in all the colors available to the palette.</p>
 
        <div class="css-example">
-    <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+    <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#headingColorExample {
   border: 1px solid #cc092f;
@@ -1064,7 +1257,7 @@ div#headingColorExample {
 }
           </style>
 
-          <div id='headingColorExample'>
+          <div id="headingColorExample">
            <h2>Ad short ribs adipisicing, lorem beef elit eiusmod laborum</h2>
            <h2 class="color1">Ad short ribs adipisicing, lorem beef elit eiusmod laborum</h2>
            <h2 class="color2">Ad short ribs adipisicing, lorem beef elit eiusmod laborum</h2>
@@ -1077,7 +1270,7 @@ div#headingColorExample {
 
       <p>The first palette is fairly cool, let's see what other colors look like on our heading text; to do so, I've chosen a <a href="https://color.adobe.com/Copy-of-Coral-Sea-color-theme-6005348/">second palete</a> from Color CC.</p>
 
-<p data-height="573" data-theme-id="2039" data-slug-hash="ZGJGXq" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/ZGJGXq/'>Colored headings, take 2</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="573" data-theme-id="2039" data-slug-hash="ZGJGXq" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/ZGJGXq/">Colored headings, take 2</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
@@ -1085,30 +1278,30 @@ div#headingColorExample {
 
     <p><strong>Technical note:</strong> In the example below there are two values for color in each selector. I coded it that way to provide a fallback solution for older browsers that do not support RGB color syntax. If the browser doesn't support RGB colors the rule will be ignored and the browser will move to the hexadecimal color and, hopefully, will render it without an issue.</p>
 
-<p data-height="969" data-theme-id="2039" data-slug-hash="gpxpXg" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/gpxpXg/'>Colored Paragraph Example</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="969" data-theme-id="2039" data-slug-hash="gpxpXg" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/gpxpXg/">Colored Paragraph Example</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
     <p>Even different shades of gray/grey may have an impact. In the last color example I've picked different shades of grey for each paragraph color. As with many things related to type, the best color for your text will depend on the typeface you choose.</p>
 
-<p data-height="691" data-theme-id="2039" data-slug-hash="XbabOL" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/XbabOL/'>Text Alignment Possibilities</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="691" data-theme-id="2039" data-slug-hash="XbabOL" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/XbabOL/">Text Alignment Possibilities</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
      <section>
-        <h2 id='media-queries'>Media Queries: Not all displays are equal</h2>
+        <h2 id="media-queries">Media Queries: Not all displays are equal</h2>
 
         <p>Media queries are a part of the progressive enhancement process. Using Media Queries (<a href="http://www.w3.org/TR/css3-mediaqueries/">Specification</a> and <a href="http://www.w3.org/TR/mediaqueries-4/">first public draft of Level 4 extensions</a>) you can use a single CSS style sheet to work with multiple devices.</p>
 
         <p>At its most basic, a media query tells the browser to change selectors and attributes based on a certain value or to load (or not load) a specified resource. For example, you can use media queries when loading a stylesheet with a link element:</p>
 
-        <pre><code class='css'><!-- CSS media query on a link element -->
+        <pre><code class="css"><!-- CSS media query on a link element -->
 &lt;link rel="stylesheet" media="(max-width: 800px)" href="example.css" /></code></pre>
 
         <p>In this query, The user agen test is the the user agent is 800 pixels wider or narrower and, if it is, it will load the specified style sheet; otherwise it'll skip it.</p>
 
         <p>You can also use media queries inside a stylesheet (internal or external) using the media at-rule. </p>
 
-        <pre><code class='css'><!-- CSS media query within a stylesheet -->
+        <pre><code class="css"><!-- CSS media query within a stylesheet -->
 @media (max-width: 600px) {
   .facet_sidebar {
     display: none;
@@ -1118,9 +1311,9 @@ div#headingColorExample {
 
        <p>In the stylesheet example, the test if for width of 600 pixels or less. If the rule is matches then we will change the display propery of the facet_siderbar class to hide it. You can have multiple rules inside each media query.</p>
 
-       <p>You can also do multiple queries, limit them to specific device types (like screen or print) and even chain queries together. The following example taken from <a href='https://css-tricks.com/snippets/css/media-queries-for-standard-devices/'>CSS Tricks.com</a> provides media queries for some iPhones (the article has additional queries for standard devices.)</p>
+       <p>You can also do multiple queries, limit them to specific device types (like screen or print) and even chain queries together. The following example taken from <a href="https://css-tricks.com/snippets/css/media-queries-for-standard-devices/">CSS Tricks.com</a> provides media queries for some iPhones (the article has additional queries for standard devices.)</p>
 
-        <pre><code class='css'><!-- CSS media query within a stylesheet -->
+        <pre><code class="css"><!-- CSS media query within a stylesheet -->
 
 /* ----------- iPhone 6 ----------- */
 
@@ -1181,9 +1374,9 @@ div#headingColorExample {
 
         <p>This begs a question: <strong>Do we design for devices or resolutions?</strong></p>
 
-        <p>Justin Avery suggests that <a href='http://responsivedesign.is/articles/why-you-dont-need-device-specific-breakpoints'>we don't need device specific media queries</a> and that we should base the media queries we use in the devices and resolutions that we need to support rather than specific devices. He mentions that:</p>
+        <p>Justin Avery suggests that <a href="http://responsivedesign.is/articles/why-you-dont-need-device-specific-breakpoints">we don't need device specific media queries</a> and that we should base the media queries we use in the devices and resolutions that we need to support rather than specific devices. He mentions that:</p>
 
-        <blockquote cite='http://responsivedesign.is/articles/why-you-dont-need-device-specific-breakpoints'>
+        <blockquote cite="http://responsivedesign.is/articles/why-you-dont-need-device-specific-breakpoints">
           <p>Over the 4 years we have slowly moved away from device specific breakpoints in favour of content specific breakpoints, i.e. adding a breakpoint when the content is no longer easy to consume.</p>
           <p>With this fundamental shift in thinking we no longer have to fear a new device — a new iPhone width — because we've already fixed our sites to work everywhere.</p>
           <p>-- Justin Avery</p>
@@ -1191,13 +1384,13 @@ div#headingColorExample {
 
         <h3>Making changes for print</h3>
 
-        <p>One of the best uses I've seen for media queries is to handle priting web content. As I wrote in <a href='http://publishing-project.rivendellweb.net/creating-print-css-stylesheets/'>Creating print CSS stylesheets</a> this is not an alternative to CSS Paged Media but a stop gap to get the online content printed.</p>
+        <p>One of the best uses I've seen for media queries is to handle priting web content. As I wrote in <a href="http://publishing-project.rivendellweb.net/creating-print-css-stylesheets/">Creating print CSS stylesheets</a> this is not an alternative to CSS Paged Media but a stop gap to get the online content printed.</p>
 
         <p>What this media query will do is set up the margins (top, left and right to 1 inch and bottom to 1.5), set the line height to 1.5 (18pt in this case), remove any background image and make the text color black.</p>
 
         <p>It will then adjust the size of the h1, h2 and h3 elements and hide video, audio, and object elements. These are normally multimedia elements that may or may not be needed in a printed document. If you don't hide them then the printer will spend large amounts of toner or ink to get your content printed (waste of time in my opinion.)</p>
 
-        <pre><code class='css'>/* example changes for printing a web page */
+        <pre><code class="css">/* example changes for printing a web page */
 @media print {
   body {
     margin: 1in 1in 1.5in;
@@ -1226,11 +1419,11 @@ div#headingColorExample {
 
         <h3>Moving forward</h3>
 
-        <p>While the current Media Query specification defines a large set of <a href='http://www.w3.org/TR/css3-mediaqueries/#media1'>media features</a> to use in our queries, what really excite me are some of the queries (additional <a href='http://www.w3.org/TR/mediaqueries-4/#mf-dimensions'>dimensions</a>, <a href='http://www.w3.org/TR/mediaqueries-4/#mf-display-quality'>display quality</a> and <a href='http://www.w3.org/TR/mediaqueries-4/#mf-interaction'>interaction</a> in particular) available in the editor draft for level 4</p>
+        <p>While the current Media Query specification defines a large set of <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">media features</a> to use in our queries, what really excite me are some of the queries (additional <a href="http://www.w3.org/TR/mediaqueries-4/#mf-dimensions">dimensions</a>, <a href="http://www.w3.org/TR/mediaqueries-4/#mf-display-quality">display quality</a> and <a href="http://www.w3.org/TR/mediaqueries-4/#mf-interaction">interaction</a> in particular) available in the editor draft for level 4</p>
 
         <p>When these queries are supported in browsers we will be able to query for both screen size and DPI density and serve the appropriate content using CSS. It may look something like this:</p>
 
-        <pre><code class='css'>/* possible test for screen size and 2x HDPI */
+        <pre><code class="css">/* possible test for screen size and 2x HDPI */
 @media screen and ((min-width: 800px) and (max-width: 1024px)) and (resolution &gt;= 2dppx) {
   .facet_sidebar {
     /* Do something for browsers that go between the two values */
@@ -1238,29 +1431,29 @@ div#headingColorExample {
 }
 </code></pre>
 
-        <p>Just in case you're curious (as I was): dppx represents the number of dots per px unit. Due to the 1:96 fixed ratio of CSS in to CSS px, 1dppx is equivalent to 96dpi, that corresponds to the default resolution of images displayed in CSS as defined by image-resolution (from <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/resolution'>MDN</a>.)</p>
+        <p>Just in case you're curious (as I was): dppx represents the number of dots per px unit. Due to the 1:96 fixed ratio of CSS in to CSS px, 1dppx is equivalent to 96dpi, that corresponds to the default resolution of images displayed in CSS as defined by image-resolution (from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution">MDN</a>.)</p>
 
         <p>Even when widely supported you <strong>must</strong> test this in your target devices!</p>
 
         <h3>Links and resources</h3>
 
         <ul>
-          <li><a href='http://www.w3.org/TR/css3-mediaqueries/'>Media Query Level 3 Specification</a></li>
-          <li><a href='http://www.w3.org/TR/mediaqueries-4/'>Media Query Level 4 Editor Draft</a></li>
-          <li><a href='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Media_features'>MDN Media Query entry</a></li>
-          <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media'>Media Types</a></li>
-          <li><a href='http://viewportsizes.com/'>List of device viewport sizes</a></li>
+          <li><a href="http://www.w3.org/TR/css3-mediaqueries/">Media Query Level 3 Specification</a></li>
+          <li><a href="http://www.w3.org/TR/mediaqueries-4/">Media Query Level 4 Editor Draft</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Media_features">MDN Media Query entry</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">Media Types</a></li>
+          <li><a href="http://viewportsizes.com/">List of device viewport sizes</a></li>
         </ul>
 
      </section>
 
      <section>
-       <h2 id='text-alignment-and-hyphenations'>Text Alignment and Hyphenation</h2>
+       <h2 id="text-alignment-and-hyphenations">Text Alignment and Hyphenation</h2>
 
        <p>Given the same font, alignment and hypenatiton have a definitive impact on the way we read content and how it appears on screen</p>
 
              <div class="css-example">
-    <style scoped contenteditable>/* You can edit this text and copy it to your own stylesheet */
+    <style scoped contenteditable="">/* You can edit this text and copy it to your own stylesheet */
 
 div#alignmentExample {
   border: 1px solid #cc092f;
@@ -1286,7 +1479,7 @@ div#alignmentExample .justified {
 
         </style>
 
-          <div id='alignmentExample'>
+          <div id="alignmentExample">
 
            <p class="left">Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing. Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
            <p class="center">Bacon ipsum dolor amet sint t-bone et aliquip proident ex dolor. Landjaeger tail duis, nostrud brisket strip steak shankle turducken. Laborum sausage aliqua, non quis laboris est brisket reprehenderit ball tip cow capicola. Meatloaf commodo jerky adipisicing. Ad short ribs adipisicing, lorem beef elit eiusmod laborum pork belly labore. Aliqua jowl id, ut cupim in swine short ribs. Nulla short loin enim drumstick in, minim rump pancetta. Fatback qui corned beef, strip steak spare ribs elit minim pig. Cupidatat aliquip pariatur, pork belly tenderloin flank cillum.</p>
@@ -1309,13 +1502,13 @@ div#alignmentExample .justified {
         <li>There's no way for Javascript to influence the algorithm for laying out text in the browser. Thus we can't control how many hyphens occur on subsequent lines nor can we know which words have actually to be hyphenated. Hyphenator.js just hyphenates all of them.</li>
       </ul>
 
-<p data-height="689" data-theme-id="2039" data-slug-hash="PqKPvV" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/PqKPvV/'>Text Alignment Possibilities With Hyphenated Text.</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="689" data-theme-id="2039" data-slug-hash="PqKPvV" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/PqKPvV/">Text Alignment Possibilities With Hyphenated Text.</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
      </section>
 
      <section>
-       <h2 id='kerning'>Kerning</h2>
+       <h2 id="kerning">Kerning</h2>
 
        <figure>
          <img src="http://imgs.xkcd.com/comics/kerning.png" alt="If you really hate someone, teach them to recognize bad kerning">
@@ -1330,18 +1523,18 @@ div#alignmentExample .justified {
 
        <p>Automatic kerning in CSS depends on <a href="#open-type-features">Open Type Features</a>, particularly in the kerning attribute being enabled. This will change from font to font and is embedded in the font when created.</p>
 
-<p data-height="627" data-theme-id="2039" data-slug-hash="RPZrKv" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/RPZrKv/'>Automatic Kerning</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="627" data-theme-id="2039" data-slug-hash="RPZrKv" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/RPZrKv/">Automatic Kerning</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
        <p>There may situations where you want a less uniform kerning based on specific attributes. We can control the kerning between letters, as in example 8-2, below. The first paragraph has normal kerning; the second paragraph has letters spaced 0.25em; and the third one has a negative kerning of 0.25em.</p>
 
-<p data-height="616" data-theme-id="2039" data-slug-hash="RPZrKv" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/RPZrKv/'>Automatic Kerning</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="616" data-theme-id="2039" data-slug-hash="RPZrKv" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/RPZrKv/">Automatic Kerning</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
        <p>Another way to work with kerning is to change letter spacing within words as in example 8-3. Notice the difference between examples 8-2 and 8-3: When we kern letters the text looks significantly different than when we work with words.</p>
 
-<p data-height="475" data-theme-id="2039" data-slug-hash="ZGJQjX" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/ZGJQjX/'>Kerning using letter spacing</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="475" data-theme-id="2039" data-slug-hash="ZGJQjX" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/ZGJQjX/">Kerning using letter spacing</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
       <p>As with many other things in the web, different browsers have different levels of support for kerning. This makes the feature another prime candidate for Autoprefixer. If you're not inclined to automate, you can do something like this:</p>
@@ -1363,7 +1556,7 @@ div#alignmentExample .justified {
 
       <p>The version for Opera (-o-font-feature-settings) is for older versions before adoptin Blink.</p>
 
-       <h3 id='using-lettering.js'>Using Lettering.js</h3>
+       <h3 id="using-lettering.js">Using Lettering.js</h3>
 
        <p>One of the biggest drawbacks of using CSS Kerning is that it only work with all letters and all words in a document. If you want to work at a finer level you have to work with libraries like <a href="http://letteringjs.com/">Lettering.js</a>.</p>
 
@@ -1373,13 +1566,13 @@ div#alignmentExample .justified {
 
        <p>Working with Lettering.js is a three step process.</p>
 
-       <p>Following the <a href='https://github.com/davatron5000/Lettering.js/wiki/Wrapping-letters-with-lettering()'>Lettering.js Wiki Example</a> we will use this as our example text:</p>
+       <p>Following the <a href="https://github.com/davatron5000/Lettering.js/wiki/Wrapping-letters-with-lettering()">Lettering.js Wiki Example</a> we will use this as our example text:</p>
 
        <pre><code class="html">&lt;h1 class="fancy_title">Some Title&lt;/h1></code></pre>
 
        <p>First, we need to load and initialize the plugin as you would any other plugin:</p>
 
-       <pre><code class='html'>&lt;script src="path/to/jquery.min.js">&lt;/script>
+       <pre><code class="html">&lt;script src="path/to/jquery.min.js">&lt;/script>
 &lt;script src="path/to/jquery.lettering.min.js">&lt;/script>
 &lt;script>
 $(document).ready(function() {
@@ -1414,23 +1607,23 @@ $(document).ready(function() {
 
        <p>Which then we can style with CSS looking something like this:</p>
 
-       <pre><code class='css'>.fancy_title .ch2 {
+       <pre><code class="css">.fancy_title .ch2 {
          margin-left: -.0125em;
          color: purple;
 }</code></pre>
 
        <p>We can be even more detailed in how we break our content out and how much we style it. In the example below:</p>
 
-       <pre><code class='html'>&lt;h1>My Three Sons&lt;/h1></code></pre>
+       <pre><code class="html">&lt;h1>My Three Sons&lt;/h1></code></pre>
 
-<pre><code class='html'>&lt;script>
+<pre><code class="html">&lt;script>
   $("h1").lettering('words').children('span').lettering();
 &lt;/script>
 </code></pre>
 
        <p>The lettering invocation will create spans for words and then it will split each word into its component characters, producing HTML like the one below:</p>
 
-<pre><code class='html'>&lt;h1>
+<pre><code class="html">&lt;h1>
   &lt;span class="word1">
     &lt;span class="char1">M&lt;/span>
     &lt;span class="char2">y&lt;/span>
@@ -1501,7 +1694,7 @@ $(document).ready(function() {
 
         <p>To enable these features in CSS use something like the code below:</p>
 
-        <pre><code class=css>body {
+        <pre><code class="css">body {
   font-feature-settings:
     "c2sc" 0, "calt" 1, "clig" 1, "dlig" 1, "frac" 0,
     "hist" 0, "hlig" 0, "kern" 0, "liga" 1, "nalt" 0,
@@ -1512,7 +1705,7 @@ $(document).ready(function() {
 
         <p>This feature is a prime candidate for autoprefixer or some other automation tool. Repeating the same sequence of value-pair for 3 or 4 different alternatives is a nightmare; according to <a href="http://caniuse.com/#search=font-feature-settings">caniuse.com</a>, Only IE, Chrome/Opera and Firefox support the feature and Chrome/Opera support it behind the -webkit flag.</p>
 
-        <p>For a netter explanation and specific examples, check this <a href='http://help.typekit.com/customer/portal/articles/1789736'>Typekit Help</a> article</p>
+        <p>For a netter explanation and specific examples, check this <a href="http://help.typekit.com/customer/portal/articles/1789736">Typekit Help</a> article</p>
 
         <p>Elliot Jay Stocks presented on Advanced Typography at the Generate 2014 conference in London. It provides a lot of information about this subject.</p>
 
@@ -1524,13 +1717,13 @@ $(document).ready(function() {
 
 
      <section>
-        <h2 id='unicode-and-multilingual-support'>Unicode and multilingual support</h2>
+        <h2 id="unicode-and-multilingual-support">Unicode and multilingual support</h2>
 
         <p><a href="http://unicode.org/standard/WhatIsUnicode.html">Unicode</a> is an ISO international standard (ISO/IEC 10646) for the consistent encoding, representation, and handling of text in most of the world's writing systems. It answers the question: <strong>How do I combine multiple languages in a single document?</strong></p>
 
         <p>In the past we had different encodings for different language codified in the ISO/IEC 8859 series of standards. English, for example, uses ISO/IEC 8859-1 which is mostly ASCII. This is not sufficient to work with eastern European languages that use additional symbols accents and punctuation to fully express the language. See the <a href="https://www.wikiwand.com/en/ISO/IEC_8859">Wikipedia entry for ISO 8859</a> for more details regarding what languages are supported on each section of the standard.</p>
 
-        <p>HTML and XHTML both come with a <a href='http://dev.w3.org/html5/html-author/charref'>predefined set of entities</a> to handle unicode characters using a name (for example using &amp;Upsilon; for the uppercase Upsilon greek letter.) But that is still no guarantee that your chosen font will have the glyphs matching the character you need.</p>
+        <p>HTML and XHTML both come with a <a href="http://dev.w3.org/html5/html-author/charref">predefined set of entities</a> to handle unicode characters using a name (for example using &amp;Upsilon; for the uppercase Upsilon greek letter.) But that is still no guarantee that your chosen font will have the glyphs matching the character you need.</p>
 
         <p>I've had a discussion in the XML Content/InDesign Publishing Linked in Group and, as part of my research, discovered that:</p>
 
@@ -1545,7 +1738,7 @@ $(document).ready(function() {
 
      <section>
 
-        <h2 id='legal-issues'>Legal Issues</h2>
+        <h2 id="legal-issues">Legal Issues</h2>
 
         <p>Unless you own the typeface or it is licensed through Google Fonts or another free service, you will have to pay for the font and be subject to whatever restrictions the EULA (End User License Agreement) specifies. This may be a problem when the foundry decides that you don't need a TTF format for the font you just purchased or when you're not allowed to generate an SVG version of your font to use with older iOS devices.</p>
 
@@ -1555,55 +1748,55 @@ $(document).ready(function() {
 
         <p>Font Licensing is like DRM encumbered music. You have the medium but do not own the actual font. As far as I understand it the foundry can terminate your license for any reason and you're not allowed to make changes to suit the fonts to our needs rather than believe the foundries have the answers for everything. Things changed for music files and I can only hope that the same changes will happen with fonts and font licensing.</p>
 
-        <h3 id='open-source-fonts'>Open Source fonts</h3>
+        <h3 id="open-source-fonts">Open Source fonts</h3>
 
         <p>So, if propietary fonts can become such a nightmare will open source fonts work any better?</p>
 
        <p>The answer, as usual, is it depends.</p>
 
-       <p>There are awesome fonts with open source licenses. Fonts like <a href='http://www.fontsquirrel.com/fonts/raleway'>Raleway</a>, <a href='http://www.fontsquirrel.com/fonts/roboto'>Roboto</a>, <a href='http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=gentium'>Gentium</a> and <a href='http://www.fontsquirrel.com/fonts/fira-sans'>Fira Sans</a> are good open source solutions that have liberal open source licenses (either SIL font license or Mozilla Public License) but, as with everything else related to type, you need to test your chosen fonts with your content and make sure that it works for your particular project and the (human) languages your document has to support.</p>
+       <p>There are awesome fonts with open source licenses. Fonts like <a href="http://www.fontsquirrel.com/fonts/raleway">Raleway</a>, <a href="http://www.fontsquirrel.com/fonts/roboto">Roboto</a>, <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=gentium">Gentium</a> and <a href="http://www.fontsquirrel.com/fonts/fira-sans">Fira Sans</a> are good open source solutions that have liberal open source licenses (either SIL font license or Mozilla Public License) but, as with everything else related to type, you need to test your chosen fonts with your content and make sure that it works for your particular project and the (human) languages your document has to support.</p>
 
-        <p>There are also purpose specific fonts like <a href='http://adobe-fonts.github.io/source-code-pro/'>Adobe Source Code Pro</a> or <a href='http://dejavu-fonts.org/wiki/Main_Page'>Deja Vu Mono</a> that you can use in user interfaces or code heavy environments. I use Source Code Pro for all code examples in this project.</p>
+        <p>There are also purpose specific fonts like <a href="http://adobe-fonts.github.io/source-code-pro/">Adobe Source Code Pro</a> or <a href="http://dejavu-fonts.org/wiki/Main_Page">Deja Vu Mono</a> that you can use in user interfaces or code heavy environments. I use Source Code Pro for all code examples in this project.</p>
 
-        <p>A good starting point, if you're looking for free/open source fonts is the <a href='http://www.fontsquirrel.com/fonts/list/find_fonts'>free font list</a> from Font Squirrel. You can look at the fonts and download them to test on your local system before you decide if you want to use the font.  You can also check sites like <a href='http://fontsinuse.com/'>Fonts in Use</a> to see other uses of the fonts you're evaluating.</p>
+        <p>A good starting point, if you're looking for free/open source fonts is the <a href="http://www.fontsquirrel.com/fonts/list/find_fonts">free font list</a> from Font Squirrel. You can look at the fonts and download them to test on your local system before you decide if you want to use the font.  You can also check sites like <a href="http://fontsinuse.com/">Fonts in Use</a> to see other uses of the fonts you're evaluating.</p>
 
         <figure>
-          <img src="images/fonts-in-use-example.png" alt='example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font'>
-          <figcaption>Example from <a href='fontsinuse.com'>Fonts in Use</a> with samples of sites/apps using Roboto as their font</figcaption>
+          <img src="images/fonts-in-use-example.png" alt="example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font">
+          <figcaption>Example from <a href="fontsinuse.com">Fonts in Use</a> with samples of sites/apps using Roboto as their font</figcaption>
         </figure>
 
-        <p>For the most part the free fonts in Font Squirrel can be used with the <a href='http://www.fontsquirrel.com/tools/webfont-generator'>Webfont Generator</a>. This tool allows you to upload fonts (for which you have license and/or permission) to generate the formats needed to support all browsers (including SVG for all iOS and TTF for older versions of browsers.)</p>
+        <p>For the most part the free fonts in Font Squirrel can be used with the <a href="http://www.fontsquirrel.com/tools/webfont-generator">Webfont Generator</a>. This tool allows you to upload fonts (for which you have license and/or permission) to generate the formats needed to support all browsers (including SVG for all iOS and TTF for older versions of browsers.)</p>
       </section>
 
       <section>
-        <h2 id='multi-column'>Multicolumn layouts</h2>
+        <h2 id="multi-column">Multicolumn layouts</h2>
 
-        <p>CSS 3 allows you to create multi column layouts without cheating. According to caniuse.com the feature is <a href='http://caniuse.com/#feat=multicolumn'>supported to some degree</a> by all browser vendors. We'll explore some of the things you can do with columns and where the limitations are.</p>
+        <p>CSS 3 allows you to create multi column layouts without cheating. According to caniuse.com the feature is <a href="http://caniuse.com/#feat=multicolumn">supported to some degree</a> by all browser vendors. We'll explore some of the things you can do with columns and where the limitations are.</p>
 
         <p>Please note that these examples use -moz and -webkit prefixes (for Chrome). To make sure the column examples work when you make changes you have to change all three values (prefixed and unprefixed.) This PITA makes columns another great candidate for autoprefixer or a SASS mixin.</p>
 
         <p>Finally, because this is still a work in progress, some aspects of the spec may not be implemented in all browsers. If this is an issue for you please consider using polyfills.</p>
 
-        <h3 id='counting-columns'>Creating multi column text: counting columns</h3>
+        <h3 id="counting-columns">Creating multi column text: counting columns</h3>
 
         <p>The easiest way to work with columns is to tell CSS how many columns you want using the (prefixed) column-count property. This will tell the bowser how many columns to use. It will stick to that number of columns no matter what. They will be as wide or narrow as they need to be but the browser will always honor the number of clumns you tell it to use.</p>
 
-<p data-height="665" data-theme-id="2039" data-slug-hash="oXexXr" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/oXexXr/'>Counting Columns</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="665" data-theme-id="2039" data-slug-hash="oXexXr" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/oXexXr/">Counting Columns</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
-        <h3 id='measuring-width'>Creating multi column text: counting width</h3>
+        <h3 id="measuring-width">Creating multi column text: counting width</h3>
 
         <p>The opposite effect is to use the (also prefixed) column-width property. Where column count takes a single integer without unit as its value, column-width takes a value with unit (like the 150px used in CSS Example 12-2) and will create as many columns of that width as there is space available. Contrast CSS Example 12-1 and 12-2. Where 12-1 sticks to the two columns, 12-2 creates as many 150px columns as it can with the space available. Try narrowing the window and see what happens in example 12-2... the number of columns will shrink a the space available decreases.</p>
 
-<p data-height="671" data-theme-id="2039" data-slug-hash="NqvNGj" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/NqvNGj/'>Measuring Columns Width</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="671" data-theme-id="2039" data-slug-hash="NqvNGj" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/NqvNGj/">Measuring Columns Width</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-        <h3 id='shorthand1'>Creating multi column text: the shorthand method</h3>
+        <h3 id="shorthand1">Creating multi column text: the shorthand method</h3>
 
         <p>Some times I'm lazy and I want to just make columns work. Fortunately there is a shorthand syntax for column-width and column-count. It's just columns. Examples of legal values taken from the CSS3 colmn module specification:</p>
 
-        <pre><code class='css'>body {
+        <pre><code class="css">body {
   columns: 12em;
   /* column-width: 12em; column-count: auto */
   columns: auto 12em;
@@ -1616,66 +1809,66 @@ $(document).ready(function() {
 
         <p>As we can see it's either a column-count or column-width, not both.</p>
 
-        <h3 id='column-gap'>Column Gap</h3>
+        <h3 id="column-gap">Column Gap</h3>
 
         <p>In both previous examples, the browser took it upon itself to create a gap between columns. In this case it was OK but it is not always the case. Fortunately the multi column spec gives you the option of specifying a gap between the columns of your text.</p>
 
-<p data-height="266" data-theme-id="2039" data-slug-hash="RPZarP" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/RPZarP/'>CSS Column Gap</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="266" data-theme-id="2039" data-slug-hash="RPZarP" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/RPZarP/">CSS Column Gap</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
          <p>As you can see in the examples, the further apart we put the columns the easier each column it is to read but we get a smaller space to work with the overall text content.</p>
 
-<p data-height="640" data-theme-id="2039" data-slug-hash="gpxrMM" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/gpxrMM/'>CSS Column Gap - 4em</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="640" data-theme-id="2039" data-slug-hash="gpxrMM" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/gpxrMM/">CSS Column Gap - 4em</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-        <h3 id='column-rules'>Column Rules</h3>
+        <h3 id="column-rules">Column Rules</h3>
 
         <p>In this context, rules are vertical lines between the columns to help differentiate the columns and prevent runon text. We can combine this with gutter/gap as in example 12-4 to create a more pleasing reading experience.</p>
 
-<p data-height="677" data-theme-id="2039" data-slug-hash="pJryEa" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/pJryEa/'>Columns with rules between columns</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="677" data-theme-id="2039" data-slug-hash="pJryEa" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/pJryEa/">Columns with rules between columns</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-        <h3 id='column-rules'>Spanning Columns</h3>
+        <h3 id="column-rules">Spanning Columns</h3>
 
         <p>There are times when it's nice to have an element (a div that holds byline information, for example) span the full width of our content area without regard to the number of columns. CSS Columns module provides the column-span rule to do just that.</p>
 
-         <p>This is where we see the first deviation from the specification. According to <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/column-span'>MDN</a>, Firefox does not support column-span at all, it displays the content in its own column regardless of the settings authors choose.At least the result is not too bad...</p>
+         <p>This is where we see the first deviation from the specification. According to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-span">MDN</a>, Firefox does not support column-span at all, it displays the content in its own column regardless of the settings authors choose.At least the result is not too bad...</p>
 
-       <p data-height="748" data-theme-id="2039" data-slug-hash="mJMPOP" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/mJMPOP/'>Spaning Columns with CSS</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+       <p data-height="748" data-theme-id="2039" data-slug-hash="mJMPOP" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/mJMPOP/">Spaning Columns with CSS</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-       <h3 id='filling-columns'>Filling Columns</h3>
+       <h3 id="filling-columns">Filling Columns</h3>
 
         <p>So far all our column examples are filled unevenly. The right most column is shorter (sometimes considerably so.) The column-fill property will, when supported, make all the columns even in length. Currently only firefox will support the column-fill property.</p>
 
 
-<p data-height="266" data-theme-id="2039" data-slug-hash="XbadMo" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/XbadMo/'>Column Fill</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="266" data-theme-id="2039" data-slug-hash="XbadMo" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/XbadMo/">Column Fill</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-        <h3 id='column-breaks'>Column Breaks</h3>
+        <h3 id="column-breaks">Column Breaks</h3>
 
         <p>One of the most complex aspects of working with multi column content is how to prevent breaks inside, before or after a given piece of text. It gets even more complex when we factor columns into the mix. We'll explore how to make sure that breaks work and that they actually do what we want them to:</p>
 
         <p>In this case we'll make the title h2 element stand alone in its own column and move the body text to the right and keep in the two column format. In the older days you'd accompllish this with table-based layouts but now it can be done using only CSS in bowsers that support it.</p>
 
-<p data-height="512" data-theme-id="2039" data-slug-hash="pJryPV" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/pJryPV/'>CSS Column Break - Take 1</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="512" data-theme-id="2039" data-slug-hash="pJryPV" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/pJryPV/">CSS Column Break - Take 1</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
          <p>This is easy but it gets more complicated when we look at other values for <code>break-before</code>, <code>break-after</code> and <code>break-inside</code> that describe whether we should break before the element, after the element or inside the element. We'll try another example where we'll tell the browser to explicitly break after a paragraph... the results may not be what you'd expect.</p>
 
-<p data-height="368" data-theme-id="2039" data-slug-hash="xGLVdN" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/xGLVdN/'>CSS Column Break - Take 2</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="368" data-theme-id="2039" data-slug-hash="xGLVdN" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/xGLVdN/">CSS Column Break - Take 2</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
          <p>I assumed, incorrectly as it turns out, that the break would still keep the content inside the parent's container but as you can see it did not. In order to get the effect I wanted I had to provide smaller gap between columns and give different break styles to even and odd paragraphs. The second try looks better but it is brittle... although my tests have worked consistently I keep thinking there may be a combination of browser width where this will break.</p>
 
-<p data-height="521" data-theme-id="2039" data-slug-hash="aOyNwx" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/aOyNwx/'>CSS Column Break - Take 3</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="521" data-theme-id="2039" data-slug-hash="aOyNwx" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/aOyNwx/">CSS Column Break - Take 3</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-        <h3 id='mixins-and-autoprefixer'>Mixins and Autoprefixer</h3>
+        <h3 id="mixins-and-autoprefixer">Mixins and Autoprefixer</h3>
 
         <p>If you're a SASS monkey then you can use a mixin like the one below to work with columns. The mixing makes it easier for you to work with prefixes by abstracting the prefixes and, where it makes sense, providing sensible defaults. </p>
 
-        <pre><code class='scss'>@mixin column-attribs (
+        <pre><code class="scss">@mixin column-attribs (
   $cols, $gap, $fill: balance, $span: none){
 
   /* How many columns? */
@@ -1701,14 +1894,14 @@ $(document).ready(function() {
 }
 </code></pre>
 
-      <pre><code class='scss'>.col2 {
+      <pre><code class="scss">.col2 {
   width: 100%;
   @include column-attribs (2, 20px);
 }</code></pre>
 
       <p>And the result looks like this:</p>
 
-      <pre><code class='css'>.col2 {
+      <pre><code class="css">.col2 {
   width: 100%;
   /* How many columns? */
   -moz-column-count: 2;
@@ -1728,26 +1921,26 @@ $(document).ready(function() {
   column-span: none;
 }</code></pre>
 
-      <p>I understand that there are designers who are not comfortable with SASS/SCSS. For those people I think the best solution is to use automatic prefixer tools, either directly or as part of an automated workflow. I've chosen to use <a href='https://github.com/postcss/autoprefixer'>autoprefixer</a> in a <a href='http://gruntjs.com/'>Grunt</a> workflow.</p>
+      <p>I understand that there are designers who are not comfortable with SASS/SCSS. For those people I think the best solution is to use automatic prefixer tools, either directly or as part of an automated workflow. I've chosen to use <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> in a <a href="http://gruntjs.com/">Grunt</a> workflow.</p>
 
-      <p>I won't go into details about the Grunt workflow but if you're familiar with Grunt it shouldn't be too hard to add Autoprefixer to the process. If you want to look at a (somewhat disorganized) reference you can look at the <a href='https://github.com/caraya/books-as-apps/blob/master/Gruntfile.js'>Gruntfile</a> I created for this project.</p>
+      <p>I won't go into details about the Grunt workflow but if you're familiar with Grunt it shouldn't be too hard to add Autoprefixer to the process. If you want to look at a (somewhat disorganized) reference you can look at the <a href="https://github.com/caraya/books-as-apps/blob/master/Gruntfile.js">Gruntfile</a> I created for this project.</p>
 
       <h3>Links and Resources</h3>
 
       <p>From MDN</p>
 
       <ul>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/break-before'>break-before</a></li>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/break-after'>break-after</a></li>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside'>break-inside</a></li>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/orphans'>orphans</a></li>
-        <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/widows'>widows</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-before">break-before</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-after">break-after</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside">break-inside</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/orphans">orphans</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/widows">widows</a></li>
       </ul>
 
       </section>
 
       <section>
-        <h2 id='orphans-and-widows'>Orphans and Widows</h2>
+        <h2 id="orphans-and-widows">Orphans and Widows</h2>
 
         <p>The orphans CSS property refers to the minimum number of lines of text in a container that must be left at the bottom of the page. This property is normally used to control how page breaks occur.</p>
 
@@ -1757,13 +1950,13 @@ $(document).ready(function() {
 
         <p>Compare example 13-1 with 12-5. In 12-5 the middle column has 2 lines ny themselves at the bottom of the box. How can you tell whether they are part of the paragraph in the next column versus a standalone paragraph? Example 13-1 resolves that issue by moving all the text to the next column (the 2 lines are smaller than the value we set for orphans in the CSS)</p>
 
-<p data-height="653" data-theme-id="2039" data-slug-hash="xGLLPW" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/xGLLPW/'>Widows and Orphans</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="653" data-theme-id="2039" data-slug-hash="xGLLPW" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/xGLLPW/">Widows and Orphans</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
       </section>
 
       <section>
-        <h2 id='css-transformations'>Getting fancy: CSS Transformations</h2>
+        <h2 id="css-transformations">Getting fancy: CSS Transformations</h2>
 
         <p>One of the most intriguing things we can do with text is change it's position and the way it looks on the screen with nothing but CSS in browsers that support it. The good news is that <a href="http://caniuse.com/#feat=transforms2d">all browsers except IE8 and Opera Mini support transformations</a> so we won't have to do workarounds.</p>
 
@@ -1774,7 +1967,7 @@ $(document).ready(function() {
 
         <p>We'll start with rotating the header of our content 90 degrees and move it down the column.</p>
 
-<p data-height="373" data-theme-id="2039" data-slug-hash="ZGJJvy" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/ZGJJvy/'>CSS Content Rotation - Take 1</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="373" data-theme-id="2039" data-slug-hash="ZGJJvy" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/ZGJJvy/">CSS Content Rotation - Take 1</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
         <p>It looks good but I think it can look better. When we move it sideways the text, all of a sudden, looks very small and when we make the font larger it forces the text into 2 rows... and that's not what I want... I want the larger text to stay in one column.</p>
@@ -1783,40 +1976,40 @@ $(document).ready(function() {
 
         <p>Transformations are very dependent on the dimensions of the content you're working with. The codepen below shows the heading rotated 90 degrees but placed over the text.</p>
 
-[codepen_embed height="373" theme_id="2039" slug_hash="QbMLKO" default_tab="result" user="caraya"]See the Pen <a href='http://codepen.io/caraya/pen/QbMLKO/'>CSS Content Rotation Example#2</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.[/codepen_embed]
+[codepen_embed height="373" theme_id="2039" slug_hash="QbMLKO" default_tab="result" user="caraya"]See the Pen <a href="http://codepen.io/caraya/pen/QbMLKO/">CSS Content Rotation Example#2</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.[/codepen_embed]
 
      <p>But if you look at a screenshot below, you'll see what the code work when you set the screen as wide as possible. </p>
 
      <figure>
-       <img src='images/full-width-translated-object.png'>
+       <img src="images/full-width-translated-object.png">
        <figcaption>Screenshot showing full-width display of rotated content</figcaption>
      </figure>
 
       <p>Media queries would be the best solution to acommodate for both situations. You will have to decide if the combination of Media Queries and Vendor Prefizxes is worth the effort. THe code looks like this:
 
-<p data-height="266" data-theme-id="2039" data-slug-hash="MwvWYd" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/MwvWYd/'>CSS Content Rotation Using Media Queries</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</p><p data-height="266" data-theme-id="2039" data-slug-hash="MwvWYd" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/MwvWYd/">CSS Content Rotation Using Media Queries</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
       <p>It's not perfect, the boundary between the medium and large queries needs to be adjusted but it gives you an idea of where you can go with transformations.</p>
 
-      <p>This is just the beginning of what you can do. Mozila Developers Network (MDN) provides a very good <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/transform'>overview of CSS transformations</a> to show what you can do. You can also combine these transformations like what we did in example 14-2. It is not perfect. Even though you cannot see it, the width of the heading is too large and it creates unnecessary space between the editable code and the resulting example.... We should be able to get rid of it but I'm happy with the result as it is so far.</p>
+      <p>This is just the beginning of what you can do. Mozila Developers Network (MDN) provides a very good <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">overview of CSS transformations</a> to show what you can do. You can also combine these transformations like what we did in example 14-2. It is not perfect. Even though you cannot see it, the width of the heading is too large and it creates unnecessary space between the editable code and the resulting example.... We should be able to get rid of it but I'm happy with the result as it is so far.</p>
 
        <p>Because this is dependent on screen resolution (when is a pixel is not a pixel) you must test in your target devices. Also : <em>Just because you can it doesn't mean you should.</em> As great as  transformations are they take time and may detract from your audience's attention.</p>
 
         <h3>Links and Resources</h3>
 
         <ul>
-          <li><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/transform'>CSS Transform</a> (MDN)</li>
-          <li><a href='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transforms'>Using CSS Transforms</a> (MDN)</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">CSS Transform</a> (MDN)</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transforms">Using CSS Transforms</a> (MDN)</li>
         </ul>
       </section>
 
       <section>
-        <h2 id='css-animations'>Getting Fancy: Animating text</h2>
+        <h2 id="css-animations">Getting Fancy: Animating text</h2>
 
-        <p>Depending on the context and the type of text you're using animations can be useful. <a href='cssanimations'>CSS Animation Level 1</a> provides a way to animate CSS properties over time. It uses key frames to create the animations.</p>
+        <p>Depending on the context and the type of text you're using animations can be useful. <a href="cssanimations">CSS Animation Level 1</a> provides a way to animate CSS properties over time. It uses key frames to create the animations.</p>
 
-        We will work through an example similar to the Mozilla Developer Network <a href='https://developer.mozilla.org/samples/cssref/animations/cssanim1.html'>basic animation example</a>. The same or similar process can be used for other types of animations.
+        We will work through an example similar to the Mozilla Developer Network <a href="https://developer.mozilla.org/samples/cssref/animations/cssanim1.html">basic animation example</a>. The same or similar process can be used for other types of animations.
 
         The first thing we do is work setting up the animations in the elements we want, in this case, <code>h1</code>. Also note that we have to set up each attribute twice and maybe 3 times: One with the Mozilla/Firefox prefix (-moz), one for Chrome, Opera and Safari (-webkit) and one without a prefix to prepare for when vendor prefixes are no longer needed.
 
@@ -1827,7 +2020,7 @@ $(document).ready(function() {
           <li>Name: The name of the animation we will use. We'll define the animation below</li>
         </ul>
 
-        <pre><code class='css'>h1 {
+        <pre><code class="css">h1 {
   -moz-animation-duration: 3s;
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
@@ -1839,7 +2032,7 @@ $(document).ready(function() {
 
         <p>Once we set up the animation parameters we need to define the animation. We also have to do this three times, One for Firefox, one for Webkit-based browsers and one without a prefix to future proof our code. Each keyframes selector defines a beginning and ending state for the chosen object. In this case we move h1 heading from left to right and decrease its width at the same time. All these tasks will be done in 3 seconds (as specified by the *-animation-duration attribute of the h1 tag.)</p>
 
-    <pre><code class='css'>@-moz-keyframes slidein {
+    <pre><code class="css">@-moz-keyframes slidein {
   0% { margin-left:100%; width:300%; }
   100% { margin-left:0%; width:100%; }
 }
@@ -1860,22 +2053,22 @@ $(document).ready(function() {
 
         <p>This is just the beginning. We can add aditional frames to the keyframes selector to make the animation smoother or to add aditional steps and animation types to the process. We're also able to animate color transitions, like transforming the background color of an element through a series of steps.</p>
 
-        <p>There is also a <a href='https://w3c.github.io/web-animations/'>Web Animations API</a> editor's draft that allows developers to use JavaScript to create and control animations. I mention it here but wil not cover it as it's a Javascript API I'm still in the process of learning.</p>
+        <p>There is also a <a href="https://w3c.github.io/web-animations/">Web Animations API</a> editor's draft that allows developers to use JavaScript to create and control animations. I mention it here but wil not cover it as it's a Javascript API I'm still in the process of learning.</p>
 
-        <p>Just like with transformation: <em>Just because you can it doesn't mean you should.</em> As great as animations are they take time and may detract from your audience's attention. Animations can also cause <a href='http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/'>performance issues</a> that you need to consider. </p>
+        <p>Just like with transformation: <em>Just because you can it doesn't mean you should.</em> As great as animations are they take time and may detract from your audience's attention. Animations can also cause <a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">performance issues</a> that you need to consider. </p>
 
         <h3>Links and resources</h3>
 
         <ul>
-          <li><a href='https://css-tricks.com/snippets/css/keyframe-animation-syntax/'>Keyframe Animation Syntax</a></li>
-          <li><a href='https://css-tricks.com/almanac/properties/a/animation/'>Animation</a></li>
-          <li><a href=''>Web Animation API</a></li>
-          <li><a href='http://www.the-art-of-web.com/css/css-animation/'>Animation Using CSS Transforms</a> (The Art of Web)</li>
+          <li><a href="https://css-tricks.com/snippets/css/keyframe-animation-syntax/">Keyframe Animation Syntax</a></li>
+          <li><a href="https://css-tricks.com/almanac/properties/a/animation/">Animation</a></li>
+          <li><a href="">Web Animation API</a></li>
+          <li><a href="http://www.the-art-of-web.com/css/css-animation/">Animation Using CSS Transforms</a> (The Art of Web)</li>
         </ul>
       </section>
 
       <section>
-        <h2 id='css-shapes-masks-and-clip-paths'>Getting fancy: Shapes, masks and clip paths</h2>
+        <h2 id="css-shapes-masks-and-clip-paths">Getting fancy: Shapes, masks and clip paths</h2>
 
         <p><a href="http://dev.w3.org/csswg/css-shapes/">CSS Shapes</a> allow designers and content creators to match some magazines layouts where the text wraps around images and other polygonal and irregular shapes.</p>
 
@@ -1886,7 +2079,7 @@ $(document).ready(function() {
           <figcaption>Example of text wrapping around shapes in a page</figcaption>
         </figure>
 
-<p data-height="462" data-theme-id="2039" data-slug-hash="MwvvLE" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/MwvvLE/'>Shape Outside Example</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="462" data-theme-id="2039" data-slug-hash="MwvvLE" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/MwvvLE/">Shape Outside Example</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
       <p>In the future we'll be able to use shape inside and <a href="http://dev.w3.org/csswg/css-exclusions/">exclusions</a> to create magazine equivalent layouts and where creativity will be the driving force, not browser constaints.</p>
@@ -1908,7 +2101,7 @@ $(document).ready(function() {
       <p><em>Clipping</em> describes the visible region of visual elements. The region can be described by using certain SVG graphics elements or basic shapes. Anything outside of this region is not rendered.</p>
         </blockquote>
 
-        <p>It has long been a trivial exercise to create masks and clip path images in Photoshop or Illustrator (and Photoshop CC makes it a really simple exercise as shown in the Lynda.com course <a href=''>Design the Web: Clipping Masks</a>.) But until clip paths and masks became available in CSS you had to use an external tool to create these effects.</p>
+        <p>It has long been a trivial exercise to create masks and clip path images in Photoshop or Illustrator (and Photoshop CC makes it a really simple exercise as shown in the Lynda.com course <a href="">Design the Web: Clipping Masks</a>.) But until clip paths and masks became available in CSS you had to use an external tool to create these effects.</p>
 
         <h3>Examples and References</h3>
         <ul>
@@ -1920,15 +2113,15 @@ $(document).ready(function() {
       </section>
 
       <section>
-        <h2 id='blend-modes'>Getting Fancy: Blend Modes</h2>
+        <h2 id="blend-modes">Getting Fancy: Blend Modes</h2>
 
-        <p><a href='http://dev.w3.org/fxtf/compositing-1/'>Compositing and Blending Level 1</a> candidate recommendation provides a way to composite elements in HTML and SVG using CSS. Think of the way you can create non destructive clips and masks in Photoshop; the idea is the same but rather than use Photoshop we can use CSS in the browser. We'll look at the basics of CSS Blend Modes and some examples of their applications to text.</p>
+        <p><a href="http://dev.w3.org/fxtf/compositing-1/">Compositing and Blending Level 1</a> candidate recommendation provides a way to composite elements in HTML and SVG using CSS. Think of the way you can create non destructive clips and masks in Photoshop; the idea is the same but rather than use Photoshop we can use CSS in the browser. We'll look at the basics of CSS Blend Modes and some examples of their applications to text.</p>
 
-        <p>The specification is supported in Firefox, Chrome and Opera with partial support in Safari and, as far as I can tell, without prefixes (according to <a href='http://caniuse.com/#feat=css-backgroundblendmode'>caniuse.com</a>)</p>
+        <p>The specification is supported in Firefox, Chrome and Opera with partial support in Safari and, as far as I can tell, without prefixes (according to <a href="http://caniuse.com/#feat=css-backgroundblendmode">caniuse.com</a>)</p>
 
-        <p>One of the first examples I found interesting is how to create masks in CSS. This pen, from Dudley Storey, illustrates the idea. The text, and only the text, will show the underlying image. The rest of the screen. See the <a href='http://demosthenes.info/blog/1032/Easy-Cross-Browser-Text-Masks-with-Blend-Modes'>acompanying article</a> for more detail of the process and how to incorporate this into your own work.</p>
+        <p>One of the first examples I found interesting is how to create masks in CSS. This pen, from Dudley Storey, illustrates the idea. The text, and only the text, will show the underlying image. The rest of the screen. See the <a href="http://demosthenes.info/blog/1032/Easy-Cross-Browser-Text-Masks-with-Blend-Modes">acompanying article</a> for more detail of the process and how to incorporate this into your own work.</p>
 
-        <p data-height="573" data-theme-id="2039" data-slug-hash="pJPyRq" data-default-tab="result" data-user="caraya" class='codepen'>See the Pen <a href='http://codepen.io/caraya/pen/pJPyRq/'>Text Clipping Masks with CSS Blend Modes</a> by Carlos Araya (<a href='http://codepen.io/caraya'>@caraya</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <p data-height="573" data-theme-id="2039" data-slug-hash="pJPyRq" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/pJPyRq/">Text Clipping Masks with CSS Blend Modes</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
         <p>When you highlight the word Chicago you can see other parts of the image that were not used as part of the mask. The image itself has not been edited. THis is similar to how you can move the image when you do layer blending in Photoshop. The underlying image will move but the text will remain the same.</p>
@@ -1936,32 +2129,32 @@ $(document).ready(function() {
         <h3>Tutorials and Links</h3>
 
         <ul>
-          <li><a href='http://photoblogstop.com/photoshop/photoshop-blend-modes-explained'>Blend modes in Photoshop</a></li>
-          <li><a href='http://demosthenes.info/blog/707/PhotoShop-In-The-Browser-Understanding-CSS-Blend-Modes'>Blend modes in CSS</a></li>
+          <li><a href="http://photoblogstop.com/photoshop/photoshop-blend-modes-explained">Blend modes in Photoshop</a></li>
+          <li><a href="http://demosthenes.info/blog/707/PhotoShop-In-The-Browser-Understanding-CSS-Blend-Modes">Blend modes in CSS</a></li>
         </ul>
       </section>
 
       <section>
-        <h2 id='explorations'>Explorations and Experiments</h2>
+        <h2 id="explorations">Explorations and Experiments</h2>
 
-        <div class='video'>
+        <div class="video">
           <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZNpn7FBp_9U" frameborder="0" allowfullscreen></iframe>
           <p>Jen Simmons presentation at SFHTML5 - May 20, 2015 (There are some audio issues, be patient)</p>
         </div>
 
         <p>Jen makes a great point on her presentation. Where is the awesome layouts that we see in print reflected on the web? We are not tied into the &quot;rectangular boxes&quot; wisdom of the web. We have technologies like shapes, clip paths, masks and many other technologies that make square boxes almost obsolete.</p>
 
-        <p>Don't get me wrong... rectangles have their place and we shouldn't make all out content replicas of printed material but, Rather than takin the challenges and opportunities of print as a source of ideas and inspirations we became stuck in the <a href='http://alistapart.com/article/holygrail'>Holy Grail</a> layout (and we'll leave aside, for the moment, the fact that the Holy Grail Layout only became practical with the advent of CSS Flexbox as <a href='http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/'>explained</a> by Philip Walton.)</p>
+        <p>Don't get me wrong... rectangles have their place and we shouldn't make all out content replicas of printed material but, Rather than takin the challenges and opportunities of print as a source of ideas and inspirations we became stuck in the <a href="http://alistapart.com/article/holygrail">Holy Grail</a> layout (and we'll leave aside, for the moment, the fact that the Holy Grail Layout only became practical with the advent of CSS Flexbox as <a href="http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/">explained</a> by Philip Walton.)</p>
 
         <p>So what happens when you stop thinking about rectangular, Holy Grail style, layouts? You can start thinking of layouts like this:</p>
 
-        <p>You can compare the images above with images like the ones in the <a href='https://www.flickr.com/photos/merlin/sets/72157622077100537'>Noise versus Noise</a> Flickr set where the creator has attempted to identify the actual content of websites in the midst of ads and other content that is irrelevant to the actual objective of the site.</p>
+        <p>You can compare the images above with images like the ones in the <a href="https://www.flickr.com/photos/merlin/sets/72157622077100537">Noise versus Noise</a> Flickr set where the creator has attempted to identify the actual content of websites in the midst of ads and other content that is irrelevant to the actual objective of the site.</p>
 
-        <p><a href='https://twitter.com/leaverou'>Lea Verou</a>'s <a href='http://shop.oreilly.com/product/0636920031123.do'>CSS Secrets</a> is another good source of inspiration for CSS and how far to push the technologies. The book is based on two of her presentations: <a href='http://www.frontend2011.com/video/lea-verou.html'>CSS3 secrets: 10 things you might not know about CSS3</a> and <a href='http://lea.verou.me/more-css-secrets/#intro'>More CSS Secrets: Another 10 things you may not know about CSS</a> and it provides crazy ways to use what we're already familiar in CSS.</p>
+        <p><a href="https://twitter.com/leaverou">Lea Verou</a>'s <a href="http://shop.oreilly.com/product/0636920031123.do">CSS Secrets</a> is another good source of inspiration for CSS and how far to push the technologies. The book is based on two of her presentations: <a href="http://www.frontend2011.com/video/lea-verou.html">CSS3 secrets: 10 things you might not know about CSS3</a> and <a href="http://lea.verou.me/more-css-secrets/#intro">More CSS Secrets: Another 10 things you may not know about CSS</a> and it provides crazy ways to use what we're already familiar in CSS.</p>
 
         <h3>Why can't it look like print? Why should it look like print?</h3>
 
-        <div class='video'>
+        <div class="video">
           <iframe width="100%" height="315" src="https://www.youtube.com/embed/t7GGZwt5yVU" frameborder="0" allowfullscreen></iframe>
           <p>One example of pushing the web: non-linear narratives</p>
         </div>
@@ -1973,27 +2166,27 @@ $(document).ready(function() {
         <p>The examples below</p>
 
         <ul>
-          <li><a href='http://anidealiveson.org/2014/#feature'>An Idea Lives On</a></li>
-          <li><a href='http://www.nytimes.com/projects/2012/snow-fall/#/?part=tunnel-creek'>Snow Fall</a></li>
-          <li><a href='http://espn.go.com/espn/feature/story/_/id/13035450/league-legends-prodigy-faker-carries-country-shoulders'>The unkillable Demon King</a></li>
-          <li><a href='http://www.washingtonpost.com/graphics/world/scaling-everest/'>Scaling Everest</a></li>
-          <li><a href='http://www.pixelfable.com/'>Pixel Fable</a></li>
-          <li><a href='http://unahistoriaquedalavuelta.com/en/'>Una historia que da la vuelta</a></li>
-          <li><a href='http://lostnigeria.com/air-travel/'>Lost Nigeria</a></li>
-          <li><a href='http://webplatform.adobe.com/Demo-for-National-Geographic-Forest-Giant/browser/src/'>Forest Giant Site</a></li>
+          <li><a href="http://anidealiveson.org/2014/#feature">An Idea Lives On</a></li>
+          <li><a href="http://www.nytimes.com/projects/2012/snow-fall/#/?part=tunnel-creek">Snow Fall</a></li>
+          <li><a href="http://espn.go.com/espn/feature/story/_/id/13035450/league-legends-prodigy-faker-carries-country-shoulders">The unkillable Demon King</a></li>
+          <li><a href="http://www.washingtonpost.com/graphics/world/scaling-everest/">Scaling Everest</a></li>
+          <li><a href="http://www.pixelfable.com/">Pixel Fable</a></li>
+          <li><a href="http://unahistoriaquedalavuelta.com/en/">Una historia que da la vuelta</a></li>
+          <li><a href="http://lostnigeria.com/air-travel/">Lost Nigeria</a></li>
+          <li><a href="http://webplatform.adobe.com/Demo-for-National-Geographic-Forest-Giant/browser/src/">Forest Giant Site</a></li>
         </ul>
 
         <p>How tos and tutorials</p>
 
         <ul>
-          <li><a href='http://www.html5rocks.com/en/tutorials/casestudies/natgeo/'>Forest Giant Case Study</a> -- HTML5 Rocks</li>
-          <li><a href='https://source.opennews.org/en-US/articles/how-we-made-snow-fall/'>How we made Snow Fall</a></li>
+          <li><a href="http://www.html5rocks.com/en/tutorials/casestudies/natgeo/">Forest Giant Case Study</a> -- HTML5 Rocks</li>
+          <li><a href="https://source.opennews.org/en-US/articles/how-we-made-snow-fall/">How we made Snow Fall</a></li>
         </ul>
       </section>
 
       <section>
 
-        <h2 id='test'>Test the hell out of the project</h2>
+        <h2 id="test">Test the hell out of the project</h2>
 
         <p>When I use the term test in the context of typography I mean to test in as many systems and devices as you can nget your hands on. Not just to make sure that whatever bells and whistles you use work as intended but to make sure that the different form factors, smaller screen sizes and devices in particular, display the content in a way that matches the design as specified.</p>
 
@@ -2004,7 +2197,7 @@ $(document).ready(function() {
       </section>
 
       <section>
-        <h2 id='one-final-thing'>One final thing</h2>
+        <h2 id="one-final-thing">One final thing</h2>
 
         <p>For those of us who have been playing in/with 'the web' for 10 years or longer remember pages like the ones in the figures below. There was no Javascript and, I believe, the original CSS specification was released in 1996 so there was no CSS to play with.</p>
 
@@ -2028,7 +2221,7 @@ $(document).ready(function() {
 
         <p>As Eric Meyer reminds us the web is more than just Javascript, CSS and the latest and greatest Framework, API or micro service. We need to make sure that the content is accessible whether we have CSS and Javascript enabled or whether they are in a broadband Gigabit connection or in a very slow dial up connection in Africa or India or for people using assistive technology devices.</p>
 
-        <div class='video'>
+        <div class="video">
           <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/r38al1w-h4k" frameborder="0" allowfullscreen></iframe>
 
           <p>This Web App Best Viewed By Someone Else - Eric Meyer keynote at Fluent 2015</p>
@@ -2046,9 +2239,9 @@ $(document).ready(function() {
 
       </section>
 
-    </div>
+    </section></section></div>
 
-     <div class='right-column'></div>
+     <div class="right-column"></div>
 
   </div>
 
