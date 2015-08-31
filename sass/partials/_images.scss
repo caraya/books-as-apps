@@ -7,7 +7,7 @@ figure {
   //border: 1px solid $red;
   counter-increment: figure_count;
   margin: 2em auto;
-  max-width: 600px;
+  max-width: 100%;
   max-width: -moz-min-content;
   max-width: -webkit-min-content;
   max-width: min-content;
@@ -30,7 +30,7 @@ figure {
 figure .sidebyside{
   counter-increment: figure_count;
   margin: 2em auto;
-  max-width: 600px;
+  max-width: 100%;
   max-width: -moz-min-content;
   max-width: -webkit-min-content;
   max-width: min-content;

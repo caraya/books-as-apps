@@ -1,5 +1,6 @@
 /*global module */
 /*global require */
+
 (function () {
   'use strict';
   module.exports = function (grunt) {
@@ -19,6 +20,9 @@
 
     grunt.initConfig({
 
+      // Reference to the package file
+      pkg: grunt.file.readJSON('package.json'),
+
       // JAVASCRIPT TASKS
       // Hint the grunt file and all files under js/
       // and one directory below
@@ -33,19 +37,79 @@
       // Takes all the files under js/ and concatenates
       // them together. I've chosen not to mangle the compressed file
       uglify: {
-        dist: {
+        main: {
           options: {
             mangle: false,
             sourceMap: true,
-            sourceMapName: 'css/script.min.map'
+            banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+            '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+            'Released under the MIT license http://caraya.mit-license.org/*/'
           },
           files: {
-            'js/script.min.js': [ 'js/video.js', 'lib/highlight.pack.js']
+            'js/build.js': [ 'js/*.js' ],
+          }
+        },
+        libs: {
+          options: {
+            mangle: false,
+            sourceMap: true
+          },
+          files: {
+            'lib/vendor/allLibs.js': [
+              'lib/vendor/*.js',
+              '!lib/vendor/modernizr-2.8.3.min.js' ],
+          }
+        },
+        plugins: {
+          options: {
+            mangle:false,
+            sourceMap: true
+          },
+          files: {
+            'lib/plugins/allPlugs.js': [ 'lib/plugins/*.js' ]
           }
         }
       },
 
-      // SASS RELATED TASKS
+
+      // OPTIONAL JS TASKS
+      // Both Coffescript and Babel will generate Javascript files.
+      // May want to run them before concat and uglify to make sure we
+      // have all our files ready to be processed.
+      // If you're using either Babel or Coffeescript run the corresponding
+      // task below
+
+      // COFFEESCRIPT
+      // If you want to use coffeescript (http://coffeescript.org/)
+      // change the cwd value to the locations of your coffee files
+      coffee: {
+        files: {
+          expand: true,
+          flatten: true,
+          cwd: 'coffee',
+          src: ['*.coffee'],
+          dest: 'js/',
+          ext: '.js'
+        }
+      },
+
+      // BABEL
+      // Babel allows you to transpile ES6 to current ES5 without needing
+      // a plugin or anything installed in your application. This will
+      // eventually go away when I'm happy with ES6 support in browsers
+      // See http://babeljs.io/ for more information.
+      babel: {
+        options: {
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            'es6/*.js': 'src/*.js'
+          }
+        }
+      },
+
+      // SASS AND CSS RELATED TASKS
       // Converts all the files under scss/ ending with .scss
       // into the equivalent css file on the css/ directory
       sass: {
@@ -63,7 +127,7 @@
         },
         production: {
           options: {
-            style: 'compact'
+            style: 'compress'
           },
           files: [ {
             expand: true,
@@ -93,15 +157,46 @@
         }
       },
 
-      perfbudget: {
-        all: {
-          options: {
-            url: 'https://caraya.github.io/books-as-apps/typography.html',
-            key: 'A.be974c9b235f69677db80813612925c6',
-            budget: {
-              visualComplete: '4000',
-              SpeedIndex: '1500'
-            }
+      // Optional CSS Post Process
+      // Autoprefixer will check caniuse.com's database and
+      // add the necessary prefixes to CSS elements as needed.
+      // This saves us from doing the work manually
+      autoprefixer: {
+        options: {
+          browsers: [
+            'ie >= 10',
+            'ie_mob >= 10',
+            'ff >= 30',
+            'chrome >= 34',
+            'safari >= 7',
+            'opera >= 23',
+            'ios >= 7',
+            'android >= 4.4',
+            'bb >= 10'
+          ]
+        },
+
+        files: {
+          expand: true,
+          flatten: true,
+          src: 'css/*.css',
+          dest: 'css/*.css'
+        }
+      },
+
+      // UNCSS will analyzes the your HTML pages and
+      // remove from the CSS all the classes that are
+      // not used in any of your HTML pages
+      //
+      // This task needs to be run in the processed CSS
+      // rather than the SCSS files
+      //
+      //See https://github.com/addyosmani/grunt-uncss
+      // for more information
+      uncss: {
+        dist: {
+          files: {
+            'dist/css/main.css': [ 'dist/*.html' ]
           }
         }
       },
@@ -109,7 +204,7 @@
       imagemin: {
         png: {
           options: {
-            optimizationLevel: 3
+            optimizationLevel: 7
           },
           files: [
             {
@@ -144,81 +239,18 @@
         }
       },
 
-      // Autoprefixer will check caniuse.com's database and
-      // add the necessary prefixes to CSS elements as needed.
-      // This saves us from doing the work manually
-      autoprefixer: {
-        options: {
-          browsers: [ 'last 2 versions', 'ie8', 'ie9' ]
-        },
-
-        files: {
-          expand: true,
-          flatten: true,
-          src: 'css/*.css',
-          dest: 'css/*.css'
-        }
-      },
-
-      // UNCSS will analyzes the your HTML pages and
-      // remove from the CSS all the classes that are
-      // not used in any of your HTML pages
-      //
-      // This task needs to be run in the processed CSS
-      // rather than the SCSS files
-      //
-      //See https://github.com/addyosmani/grunt-uncss
-      // for more information
-      uncss: {
-        dist: {
-          files: {
-            'dist/css/main.css': [ 'dist/*.html' ]
-          }
-        }
-      },
-
-      // COFFEESCRIPT
-      // If you want to use coffeescript (http://coffeescript.org/)
-      // instead of vanilla JS, uncoment the block below and change
-      // the cwd value to the locations of your coffee files
-      coffee: {
-        files: {
-          expand: true,
-          flatten: true,
-          cwd: 'coffee',
-          src: ['*.coffee'],
-          dest: 'js/',
-          ext: '.js'
-        }
-      },
-
-      // BABEL
-      // Babel allows you to transpile ES6 to current ES5 without needing
-      // a plugin or anything installed in your application. This will
-      // eventually go away when I'm happy with ES6 support in browsers
-      // See http://babeljs.io/ for more information.
-      babel: {
-        options: {
-          sourceMap: true
-        },
-        dist: {
-          files: {
-            'es6/*.js': 'src/*.js'
-          }
-        }
-      },
-
       // GH-PAGES TASK
       // Push the specified content into the repositories
       // gh-pages branch
       'gh-pages': {
         options: {
           message: 'Content committed from Grunt gh-pages',
-          dotfiles: false
+          dotfiles: false,
+          base: 'dist/'
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: ['dist/**/*']
+        src: ['**/*']
       },
 
       // FILE MANAGEMENT
@@ -259,60 +291,62 @@
         all: [ 'dist/' ]
       },
 
-      // WATCH TASK
-      // Watch for changes on the js and scss files and
-      // perform the specified task
-      watch: {
-        options: {
-          livereload: true
-        },
-        // Watch all javascript files and hint them
-        js: {
-          files: [ 'Gruntfile.js', 'js/{,*/}*.js'],
-          tasks: [ 'jshint'],
-          options: {
-            livereload: true
-          }
-        },
-        sass: {
-          files: [ 'sass/*.scss'],
-          tasks: [ 'sass:dev', 'autoprefixer'],
-          options: {
-            livereload: true
-          }
-        }
-      },
-
-      connect: {
-        draft: {
-          options: {
-            base: '.',
-            port: 2509,
-            keepalive: true,
-            livereload: true
-
-          }
-        }
-      },
-
-      // grunt-open will open your browser at the project's URL
-      open: {
+      perfbudget: {
         all: {
-          // Gets the port from the connect configuration
-          path: 'http://0.0.0.0:2509'
+          options: {
+            url: 'https://caraya.github.io/books-as-apps/typography.html',
+            key: 'A.be974c9b235f69677db80813612925c6',
+            budget: {
+              visualComplete: '4000',
+              SpeedIndex: '1500'
+            }
+          }
+        }
+      },
+
+      critical: {
+        typography: {
+          options: {
+            minify: true,
+            base: './',
+            css: [
+              'css/main.css'
+            ],
+            width: 1200,
+            height: 800
+          },
+          src: 'typography.html',
+          dest: 'dist/typography.html'
+        }
+      },
+
+
+      // Compare the size of the listed files
+      compare_size: {
+        files: [
+          'dist/js/*.js',
+          'dist/css/*.css'
+        ],
+        options: {
+          // Location of stored size data
+          cache: '.sizecache.json',
+
+          // Compressor label-function pairs
+          compress: {
+            gz: function (fileContents) {
+              return require('gzip-js').zip(fileContents, {}).length;
+            }
+          }
         }
       }
+
+
 
     });
     // closes initConfig
 
     // CUSTOM TASKS
     // Usually a combination of one or more tasks defined above
-
-    grunt.task.registerTask(
-      'local-server',
-      [ 'connect', 'open' ]
-    );
 
     grunt.task.registerTask(
       'lint',
@@ -335,8 +369,18 @@
     );
 
     grunt.task.registerTask(
+      'optional-js',
+      [ 'coffeescript', 'babel' ]
+    );
+
+    grunt.task.registerTask(
       'prep-js',
-      [ 'jshint', 'uglify' ]
+      [ 'jshint', 'concat:dist', 'uglify' ]
+    );
+
+    grunt.task.registerTask(
+      'all-js',
+      [' optional-js', 'prep-js' ]
     );
 
   };

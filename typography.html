@@ -26,7 +26,7 @@
   <!-- For iPad Portrait 768x1004 (high-resolution) -->
   <link rel="apple-touch-startup-image" sizes="1536x2008" href="/images/misc/splash-screen-1536x2008.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)" />
 
-  <!-- Windows 8+ tile stuff -- Assumes all content is uploaded to server -->
+  <!-- Windows 8+ tile stuff - Assumes all content is uploaded to server -->
   <meta name="application-name" content="My Awesome Site" />
   <meta name="msapplication-TileColor" content="#e809e8" />
   <meta name="msapplication-square70x70logo" content="tiny.png" />
@@ -38,21 +38,15 @@
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/styles/github.css">
-  <script src="lib/vendor/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  <script src="lib/vendor/modernizr-2.8.3.js"></script>
+  <script src="lib/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
 
 <body>
   <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
 
 
   <div class="wrap">
@@ -82,7 +76,7 @@
       <h2>Why worry about typography on the web?</h2>
 
       <div class='video'>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0OF-jU97HzQ" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/0OF-jU97HzQ" frameborder="0" allowfullscreen></iframe>
 
         <p>Universal Typography -- Tim Brown</p>
       </div>
@@ -503,11 +497,17 @@ div#widthExample1 p.p4 {
         <pre><code class="css">@font-face {
     font-family: 'stone-sans-webfont';
     src: url('../path-to-font-file.eot');
-    src: url('../path-to-font-file.eot?#iefix') format('embedded-opentype'),
-         url('../path-to-font-file.woff2') format('woff2'),
-         url('../path-to-font-file.woff') format('woff'),
-         url('../path-to-font-file.ttf') format('truetype'),
-         url('../path-to-font-file.svg#stone-sans-webfont') format('svg');
+    src:
+      url('../path-to-font-file.eot?#iefix')
+        format('embedded-opentype'),
+      url('../path-to-font-file.woff2')
+        format('woff2'),
+      url('../path-to-font-file.woff')
+        format('woff'),
+      url('../path-to-font-file.ttf')
+        format('truetype'),
+      url('../path-to-font-file.svg#stone-sans-webfont')
+        format('svg');
     font-weight: normal;
     font-style: normal;
 }</code></pre>
@@ -515,7 +515,7 @@ div#widthExample1 p.p4 {
         <p>And then we associate the font with CSS like we normally would matching the font-family attribute in the @font-face declaration with the font-family attribute of the element where we want to use it:</p>
 
         <pre><code class="css">html {
-        font-family: 'stone-sans-webfont', arial, sans-serif;
+  font-family: 'stone-sans-webfont', arial, sans-serif;
 }
         </code></pre>
 
@@ -530,7 +530,8 @@ em {
 }
 
 /*
-  When using both we don't care what order they are used in
+  When using both we don't care
+  what order they are used in
 */
 strong em,
 em strong {
@@ -1511,7 +1512,7 @@ $(document).ready(function() {
         <p>Elliot Jay Stocks presented on Advanced Typography at the Generate 2014 conference in London. It provides a lot of information about this subject.</p>
 
         <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/iDy-6sV_kjw" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/iDy-6sV_kjw" frameborder="0" allowfullscreen></iframe>
 
           <p>Elliot Jay Stocks -- Generate 2014 conference</p>
         </div>
@@ -1598,10 +1599,14 @@ $(document).ready(function() {
         <p>Some times I'm lazy and I want to just make columns work. Fortunately there is a shorthand syntax for column-width and column-count. It's just columns. Examples of legal values taken from the CSS3 colmn module specification:</p>
 
         <pre><code class='css'>body {
-  columns: 12em;      /* column-width: 12em; column-count: auto */
-  columns: auto 12em; /* column-width: 12em; column-count: auto */
-  columns: 2;         /* column-width: auto; column-count: 2 */
-  columns: 2 auto;    /* column-width: auto; column-count: 2 */
+  columns: 12em;
+  /* column-width: 12em; column-count: auto */
+  columns: auto 12em;
+  /* column-width: 12em; column-count: auto */
+  columns: 2;
+  /* column-width: auto; column-count: 2 */
+  columns: 2 auto;
+  /* column-width: auto; column-count: 2 */
 }</code></pre>
 
         <p>As we can see it's either a column-count or column-width, not both.</p>
@@ -1665,7 +1670,9 @@ $(document).ready(function() {
 
         <p>If you're a SASS monkey then you can use a mixin like the one below to work with columns. The mixing makes it easier for you to work with prefixes by abstracting the prefixes and, where it makes sense, providing sensible defaults. </p>
 
-        <pre><code class='scss'>@mixin column-attribs ($cols, $gap, $fill: balance, $span: none){
+        <pre><code class='scss'>@mixin column-attribs (
+  $cols, $gap, $fill: balance, $span: none){
+
   /* How many columns? */
   -moz-column-count: $cols;
   -webkit-column-count: $cols;
@@ -1674,10 +1681,14 @@ $(document).ready(function() {
   -moz-column-gap: $gap;
   -webkit-column-gap: $gap;
   column-gap: $gap;
-  /* How do we fill the content of our columns, default is to balance */
+  /*
+    How do we fill the content of our columns,
+    default is to balance
+  */
   -moz-column-fill: $fill;
   -webkit-column-fill: $fill;
   column-fill: $fill;
+
   /* Column span, defaul is not to span columns */
   -moz-column-span: $span;
   -webkit-column-span: $span;
@@ -1929,7 +1940,7 @@ $(document).ready(function() {
         <h2 id='explorations'>Explorations and Experiments</h2>
 
         <div class='video'>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ZNpn7FBp_9U" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZNpn7FBp_9U" frameborder="0" allowfullscreen></iframe>
           <p>Jen Simmons presentation at SFHTML5 - May 20, 2015 (There are some audio issues, be patient)</p>
         </div>
 
@@ -1946,7 +1957,7 @@ $(document).ready(function() {
         <h3>Why can't it look like print? Why should it look like print?</h3>
 
         <div class='video'>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/t7GGZwt5yVU" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/t7GGZwt5yVU" frameborder="0" allowfullscreen></iframe>
           <p>One example of pushing the web: non-linear narratives</p>
         </div>
 
@@ -2013,7 +2024,7 @@ $(document).ready(function() {
         <p>As Eric Meyer reminds us the web is more than just Javascript, CSS and the latest and greatest Framework, API or micro service. We need to make sure that the content is accessible whether we have CSS and Javascript enabled or whether they are in a broadband Gigabit connection or in a very slow dial up connection in Africa or India or for people using assistive technology devices.</p>
 
         <div class='video'>
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r38al1w-h4k" frameborder="0" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/r38al1w-h4k" frameborder="0" allowfullscreen></iframe>
 
           <p>This Web App Best Viewed By Someone Else - Eric Meyer keynote at Fluent 2015</p>
         </div>
@@ -2049,11 +2060,13 @@ $(document).ready(function() {
     });
   </script>
   <script src="lib/plugins/emphasis.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/build.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
 
 
-
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
   <script>
     (function (b, o, i, l, e, r) {
       b.GoogleAnalyticsObject = l;
@@ -2070,6 +2083,7 @@ $(document).ready(function() {
     ga('create', 'UA-XXXXX-X', 'auto');
     ga('send', 'pageview');
   </script>
+  -->
 </body>
 
 </html>

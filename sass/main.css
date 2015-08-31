@@ -334,7 +334,6 @@ strong {
   font-family: 'Stone-Humanist-Semi'; }
 
 /* line 6, /Users/carlos/code/books-as-apps/sass/partials/_styles.scss */
-Skolar
 em {
   font-family: 'Stone-Humanist-Ita'; }
 
@@ -356,7 +355,7 @@ object {
 /* line 15, /Users/carlos/code/books-as-apps/sass/partials/_multimedia.scss */
 div.video {
   margin: 1em auto;
-  max-width: 500px;
+  max-width: 100%;
   max-width: min-content; }
   /* line 21, /Users/carlos/code/books-as-apps/sass/partials/_multimedia.scss */
   div.video iframe {
@@ -394,7 +393,7 @@ section {
 figure {
   counter-increment: figure_count;
   margin: 2em auto;
-  max-width: 600px;
+  max-width: 100%;
   max-width: -moz-min-content;
   max-width: -webkit-min-content;
   max-width: min-content; }
@@ -414,7 +413,7 @@ figure {
 figure .sidebyside {
   counter-increment: figure_count;
   margin: 2em auto;
-  max-width: 600px;
+  max-width: 100%;
   max-width: -moz-min-content;
   max-width: -webkit-min-content;
   max-width: min-content; }
@@ -462,15 +461,16 @@ style {
 
 /* line 99, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
 div .css-example {
+  width: 100%;
   counter-increment: css_count; }
-  /* line 102, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
+  /* line 103, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
   div .css-example + p:before {
     content: "CSS Example " counter(section_count) "-" counter(css_count) ": "; }
 
-/* line 107, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
+/* line 108, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
 iframe .cp_embed_iframe {
   counter-increment: css_count; }
-  /* line 110, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
+  /* line 111, /Users/carlos/code/books-as-apps/sass/partials/_code.scss */
   iframe .cp_embed_iframe + p:before {
     content: "CSS Example " counter(section_count) "-" counter(css_count) ": "; }
 

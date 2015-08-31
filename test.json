@@ -1,0 +1,43 @@
+
+      critical: {
+          typography: {
+              options: {
+                  base: './',
+                  css: [
+                      'css/main.css',
+                      'css/normalize.css'
+                  ],
+                  width: 1200,
+                  height: 800
+              },
+              src: 'typography.html',
+              dest: 'typography-critical.html'
+          }
+      },
+
+      processhtml: {
+        files: {
+          expand: true,     // Enable dynamic expansion.
+          cwd: './',      // Src matches are relative to this path.
+          src: ['*.html'], // Actual pattern(s) to match.
+          dest: 'dist/',   // Destination path prefix.          }
+        },
+
+
+      // Compare the size of the listed files
+      compare_size: {
+        files: [
+          'dist/js/*.js',
+          'dist/css/*.css'
+        ],
+        options: {
+          // Location of stored size data
+          cache: '.sizecache.json',
+
+          // Compressor label-function pairs
+        compress: {
+          gz: function (fileContents) {
+            return require('gzip-js').zip(fileContents, {}).length;
+          }
+        }
+      },

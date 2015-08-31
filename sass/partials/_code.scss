@@ -97,6 +97,7 @@ style {
 }
 
 div .css-example {
+  width: 100%;
   counter-increment: css_count;
 
   + p:before {
