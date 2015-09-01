@@ -245,7 +245,7 @@
       'gh-pages': {
         options: {
           message: 'Content committed from Grunt gh-pages',
-          dotfiles: false,
+          dotfiles: true,
           base: 'dist/'
         },
         // These files will get pushed to the `
